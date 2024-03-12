@@ -2,10 +2,9 @@ const mongoose = require("mongoose");
 const colors = require("colors");
 const connectDb = async () => {
   try {
-  //   mongodb+srv://rajkumarrajput806:YGY64oatLEP5Ykf@cluster0.zeod0vq.mongodb.net/test
-// mongodb+srv://rajkumarrajput806:YGY64oatLEP5Ykf@cluster0.zeod0vq.mongodb.net/test?retryWrites=true&w=majority
-    // await mongoose.connect("mongodb+srv://rajkumarm210666ca:pFjrq15dd9896x28@cluster0.avtxlnk.mongodb.net/ccd");
-    await mongoose.connect("mongodb://localhost:27017/testing");
+
+ 
+    await mongoose.connect("put your database link");
 
     console.log(`Server Running On ${mongoose.connection.host}`.bgGreen.white);
   } catch (error) {
