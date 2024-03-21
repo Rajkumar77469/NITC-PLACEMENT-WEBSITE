@@ -99,8 +99,8 @@ const ImageSlider = ({ slides }) => {
         {slides.map((slideIndex) => (
           <div
             style={dotStyle}
-            key={slideIndex}
-            onClick={() => goToSlide(slideIndex)}
+            key={slideIndex.id}
+            onClick={() => goToSlide(slideIndex.id)}
           >
             ●
           </div>

@@ -30,3 +30,8 @@ const PORT = 8080 ;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
+// "placementcell": "npm start --prefix placementcell",
+// "dev": "concurrently \"npm start\" \"npm run placementcell\" "
+// "proxy": "http://localhost:8080/api/v1",
+//orignal hay

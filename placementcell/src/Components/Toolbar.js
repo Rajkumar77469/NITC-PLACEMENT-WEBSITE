@@ -1,16 +1,20 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 // import ToggleButton from "./ToggleButton";
-import logoImage from "./nitclogo.jpg"
+import logo from "./logonitc-removebg-preview.png"
+// C:\Users\rajku\OneDrive\Desktop\ccd\placementcell\src\Components\logonitc-removebg-preview.png
+// import logoImage from "./logonitc.jpg"
+import logoImage from "./G20_India_2023_logo.png"
 const Toolbar = props => (
 
   <header className="toolbar">
     <nav className="toolbar_navigation">
-      <Link to="/"  style={{ textDecoration: "none", color: "white" }}>
-        <div className="logo">  <img src={logoImage} alt="Logo" style={{left :'100%',height: '82px', width: '400px' }}  />
-        </div>
-      </Link>
-      
+
+    <Link to="/"  style={{ textDecoration: "none", color: "white" }}>
+    <div className="logo">  <img src={logo} alt="Logo" style={{left :'100%',height: '70px', width: '350px' }}  />
+    </div>
+  </Link>
+  
       <div className="spacer" />
       <div className="nav-elements">
         <ul>
@@ -19,18 +23,7 @@ const Toolbar = props => (
               About NITC
             </NavLink>
           </li>
-          <li className="dropdownmenu">
-            <button className="dropbtn">
-              <span>Academics </span>
-              <i className="fa fa-caret-down" />
-            </button>
-            <div className="dropdown-content">
-              <NavLink to="/courses" exact="true" className="activeclass">
-                Courses
-              </NavLink>
-             
-            </div>
-          </li>
+       
           <li>
             <NavLink to="/our-recruiters" exact="true" className="activeclass">
               Our Recruiters
@@ -57,11 +50,7 @@ const Toolbar = props => (
             </div>
           </li>
           
-          <li>
-            <NavLink to="/why-iiitl" exact="true" className="activeclass">
-              Why Us
-            </NavLink>
-          </li>
+        
           <li>
             <NavLink to="/procedure-and-policies" exact="true" className="activeclass">
               Procedure
@@ -79,9 +68,32 @@ const Toolbar = props => (
         </li>
         </ul>
       </div>
+      <Link to="/"  style={{ textDecoration: "none", color: "white" }}>
+      <div className="logo">  <img src={logoImage} alt="Logo" style={{marginLeft:'200px',height: '60px', width: '100px' }}  />
+      </div>
+    </Link>
+    
     </nav>
   </header>
 );
 
 export default Toolbar;          
 
+// <li className="dropdownmenu">
+// <button className="dropbtn">
+//   <span>Academics </span>
+//   <i className="fa fa-caret-down" />
+// </button>
+// <div className="dropdown-content">
+//   <NavLink to="/courses" exact="true" className="activeclass">
+//     Courses
+//   </NavLink>
+ 
+// </div>
+// </li>
+
+// <li>
+// <NavLink to="/why-iiitl" exact="true" className="activeclass">
+//   Why Us
+// </NavLink>
+// </li>

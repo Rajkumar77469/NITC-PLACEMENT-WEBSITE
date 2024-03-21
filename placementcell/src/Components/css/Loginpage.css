@@ -6,13 +6,17 @@
   justify-content: center;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   align-items: center;
+
+  background-image: linear-gradient(to right, #9679f7, #86fbf5, #9679f7);
+
 }
-.login-page h1 {
-}
+/* .login-page h1 {
+} */
 .login-form {
   background-color: #b9bcccb6;
   margin-left: -15px;
   padding: 30px;
+  z-index: 1;
 }
 
 .login-form h1 {

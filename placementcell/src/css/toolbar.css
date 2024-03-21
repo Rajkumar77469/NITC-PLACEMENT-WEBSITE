@@ -1,0 +1,89 @@
+
+/* Header */
+/* Toolbar component */
+.toolbar {
+    width: 100%;
+    background-color:#000066;
+    height: 90px;
+    align-items: center;
+    justify-content: space-between;
+    /* position: fixed; */
+    border-radius: 2%;
+  }
+  
+  .toolbar_navigation {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 1rem;
+    margin-right: 10%;
+  }
+  
+  .logo {
+    color: white;
+    font-size: 50px;
+    text-decoration: none;
+    margin-left: 0.5rem;
+    display: block;
+  }
+  
+  .logo:hover {
+    cursor: pointer;
+  }
+  
+  .spacer {
+    flex: 1;
+    
+  }
+  
+  @media (max-width: 1035px) {
+    .nav-elements {
+      display: none;
+    }
+  }
+  
+  .activeclass:focus {
+    outline: none !important;
+  }
+  
+  .nav-elements li {
+    padding: 0 0.7rem;
+  }
+  
+  .nav-elements .activeclass {
+    color: white;
+    text-decoration: none;
+    font-family: "Open Sans", sans-serif;
+  }
+  
+  .nav-elements a:after {
+    content: "";
+    position: relative;
+    width: 0;
+    height: 3px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: #fff;
+    transition: width 0.2s ease;
+    -webkit-transition: width 0.2s ease;
+  }
+  
+  .nav-elements a:hover:after {
+    width: 100%;
+    left: 0;
+    background: #fff;
+  }
+  
+  .nav-elements ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    margin-top: 5px;
+  }
+  
+  /* .apnibutton{
+    background-color: red;
+    border:1px solid blue;
+  } */

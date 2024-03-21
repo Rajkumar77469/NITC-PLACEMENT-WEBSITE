@@ -3,13 +3,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d);
+  background-image: linear-gradient(to right, #9679f7, #86fbf5, #9679f7);
+ 
 }
 .register-form {
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   padding: 20px;
   width: 30%;
+  z-index: 1;
 }
 
 .register-form h2 {

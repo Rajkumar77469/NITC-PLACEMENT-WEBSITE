@@ -438,6 +438,9 @@ import COMPANYCOMPONENT from "../company/Companyhome";
 import INTERVIEWROUTE from "../interview/interviewhome";
 import * as XLSX from "xlsx";
 import { saveAs } from "file-saver";
+
+
+
 const { RangePicker } = DatePicker;
 
 const Adminhome = () => {
@@ -681,13 +684,15 @@ const Adminhome = () => {
   };
 
   return (
+    <div>
     <Layout>
+    
     <div style={{ textAlign: 'center' }}>
     <h2 style={{ fontWeight: 'bold', color: 'blue' }}>STUDENTS RECORDS</h2>
     </div>
       {loading && <Spinner />}
       <div className="filters" style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <div>
+        <div className="datefilter">
           <h6>Sort By Enrollment Date</h6>
           <Select value={frequency} onChange={(values) => setFrequency(values)}>
             <Select.Option value="7">LAST 1 Week</Select.Option>
@@ -705,17 +710,18 @@ const Adminhome = () => {
         <div>
           <h6>Select Branch</h6>
           <Select value={Branch} onChange={(values) => setType(values)}  style={{ marginRight: '20px' }}>
-            <Select.Option value="all">ALL</Select.Option>
+            <Select.Option value="all">ALL Branch</Select.Option>
             <Select.Option value="Btech">Btech</Select.Option>
             <Select.Option value="Mtech">Mtech</Select.Option>
             <Select.Option value="Mca">Mca</Select.Option>
             <Select.Option value="Mba">Mba</Select.Option>
+            <Select.Option value="Mba">Other</Select.Option>
           </Select>
         </div>
         <div>
           <h6>Select Status</h6>
           <Select value={Status} onChange={(values) => setStatus(values)}  style={{ marginRight: '20px' }}>
-            <Select.Option value="all">ALL</Select.Option>
+            <Select.Option value="all">Placement Status</Select.Option>
             <Select.Option value="Placed">Placed</Select.Option>
             <Select.Option value="UnPlaced">UnPlaced</Select.Option>
           </Select>
@@ -728,7 +734,7 @@ const Adminhome = () => {
           />
         </div>
         <div>
-      <button type="primary" onClick={handleDownload} icon={<DownloadOutlined />}>
+      <button type="primary apnibutton" onClick={handleDownload} icon={<DownloadOutlined />}>
         Download 
       </button>
     </div>
@@ -871,6 +877,7 @@ const Adminhome = () => {
       <COMPANYCOMPONENT />
     <INTERVIEWROUTE />
     </Layout>
+    </div>
   );
 };
 
