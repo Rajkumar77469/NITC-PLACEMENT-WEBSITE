@@ -44,12 +44,14 @@ const Login = () => {
   // }, [navigate]);
   return (
     <>
-    <Navbar/>
+
+    <Navbar />
+           <h2 className="heading">WELCOME TO NITC PLACEMENT WEBSITE</h2>
       <div className="login-page ">
         {loading && <Spinner />}
         <div className="row container">
-        <h2 style={{ fontWeight: 'bold', color: 'blue' }}>WELCOME TO NITC PLACEMENT WEBSITE</h2>
-      
+
+        <br/>
           <div className="col-md-4 login-form">
             <Form layout="vertical" onFinish={submitHandler}>
               <h1>Login Form</h1>

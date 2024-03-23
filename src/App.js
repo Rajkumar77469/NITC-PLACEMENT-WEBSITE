@@ -1,4 +1,14 @@
 
+
+          //all the css files 
+                import "./css/about.css";
+                import "./css/backdrop.css";
+                import "./css/contactus.css";
+                import "./css/footer.css";
+                import "./css/homepage.css";
+                import "./css/sidedrawer.css"
+                import "./css/togglebutton.css";
+                import "./css/toolbar.css";
             import React from 'react';
             // import Navbar from './Components/Navbar';
             import Home from './Components/Home';
@@ -9,11 +19,13 @@
             import Adminhome from './Components/Admin/Adminhome';
             import Userhome from "./Components/Userhome.js";
             import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-            import "./App.css";
+            import Footer from "./Components/Footer.js";
+            // import "./App.css";
             // <Navbar />
             function App() {
               return (
-                <div>
+                <div >
+                  <Footer/>
                   <Router>
                     
                     <Routes>

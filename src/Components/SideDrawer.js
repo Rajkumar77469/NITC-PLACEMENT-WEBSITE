@@ -107,12 +107,6 @@ class SideDrawer extends React.Component {
             </ul>
           ) : null}
 
-
-          <li onClick={this.props.click}>
-            <NavLink to="/why-iiitl" exact="true" className="activeclass">
-              Why Us
-            </NavLink>
-          </li>
           <li onClick={this.props.click}>
             <NavLink to="/procedure-and-policies" exact="true" className="activeclass">
               Procedure
