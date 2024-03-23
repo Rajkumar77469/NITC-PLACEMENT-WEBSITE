@@ -87,3 +87,14 @@
     background-color: red;
     border:1px solid blue;
   } */
+ 
+  .spinner-container {
+    position: fixed;
+    top: 50px; /* Adjust this value as needed */
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 1000; /* Ensure the spinner is on top of other content */
+  }
+  

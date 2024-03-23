@@ -5,6 +5,7 @@ import axios from "axios";
 import Spinner from "./Spinner";
 import "./css/RegisterPage.css";
 import Navbar from "./Navbar"
+
 const Register = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
@@ -30,7 +31,9 @@ const Register = () => {
   // }, [navigate]);
   return (
     <>
-    <Navbar/>
+    <Navbar />
+
+    <h2 className="heading">WELCOME TO NITC PLACEMENT WEBSITE</h2>
       <div className="register-page ">
         {loading && <Spinner />}
         <Form

@@ -13,6 +13,7 @@ import harish from "./imageteam/haris.png"
 import karthik from "./imageteam/kartik.png"
 import yusuf from "./imageteam/yusuf.png"
 import safa from "./imageteam/safa.png"
+import saurav from "./imageteam/saurav.jpeg"
 import Navbar from "./Navbar";
 
 const contactUs = () => {
@@ -175,6 +176,19 @@ const contactUs = () => {
                 isPhone={false}
                 isEmail={false}
               />
+              <Card
+              src={saurav}
+              alt="saurav singh"
+              name="saurav singh"
+              phone="7856998161"
+              email="saurav_m210682ca@nitc.ac.in"
+              linkedin="https://www.linkedin.com/in/saurav-nitc/"
+              isTeacher={false}
+              position="Placement Representative MCA"
+              islinkedin={true}
+              isPhone={true}
+              isEmail={true}
+            />
             </div>
           </div>
         </div>

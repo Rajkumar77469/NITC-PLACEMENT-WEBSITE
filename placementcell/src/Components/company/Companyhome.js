@@ -1,9 +1,7 @@
-// import React, { useState, useEffect,useCallback  } from "react";
+
+// import React, { useState, useEffect, useCallback  } from "react";
 // import { Form, Input, message, Modal, Select, Table, DatePicker } from "antd";
-// import {
-//   EditOutlined,
-//   DeleteOutlined,
-// } from "@ant-design/icons";
+// import { EditOutlined, DeleteOutlined ,PlusOutlined} from "@ant-design/icons";
 // import axios from "axios"; 
 // import moment from "moment";
 // const { RangePicker } = DatePicker;
@@ -11,7 +9,7 @@
 // const Companyhome = () => {
 //     const [showModal, setShowModal] = useState(false);
 //     const [allcompany, setAllcompany] = useState([]);
-//       const [loading, setLoading] = useState(false);
+//     const [loading, setLoading] = useState(false);
 //     const [frequency, setFrequency] = useState("7");
 //     const [selectedDate, setSelectedate] = useState([]);
 //     const [editable, setEditable] = useState(null);
@@ -65,7 +63,6 @@
 //     //getall transactions
   
 //     //useEffect Hook
-    
 //       const getAllcompany = useCallback(async () => {
 //         try {
 //           const user = JSON.parse(localStorage.getItem("user"));
@@ -78,10 +75,12 @@
 //           setAllcompany(res.data);
 //           setLoading(false);
 //         } catch (error) {
-//           message.error("Ftech Issue With company");
+//           message.error("Fetch Issue With company");
 //         }
 //     }, [frequency, selectedDate]);
   
+    
+
 //     useEffect(()=>{
 //       getAllcompany();
 //     },[getAllcompany]);
@@ -97,15 +96,17 @@
 //           transacationId: record._id,
 //         });
 //         setLoading(false);
-//         message.success("company Deleted!");
+//         message.success("Company Deleted!");
 //         getAllcompany();
 //       } catch (error) {
 //         setLoading(false);
 //         console.log(error);
-//         message.error("unable to delete");
+//         message.error("Unable to delete");
 //       }
 //     };
   
+
+
 //     // form handling
 //     const handleSubmit = async (values) => {
 //       try {
@@ -120,77 +121,80 @@
 //             transacationId: editable._id,
 //           });
 //           setLoading(false);
-//           message.success("company Updated Successfully");
+//           message.success("Company Updated Successfully");
 //         } else {
 //           await axios.post("company/add-company", {
 //             ...values,
 //             userid: user._id,
 //           });
 //           setLoading(false);
-//           message.success("company Added Successfully");
+//           message.success("Company Added Successfully");
 //         }
 //         setShowModal(false);
 //         setEditable(null);
 //         getAllcompany();
 //       } catch (error) {
 //         setLoading(false);
-//         message.error("please fill all fields");
+//         message.error("Please fill all fields");
 //       }
 //     };
   
 //     return (
 //       <>
-//       <div>
-//       <h6>COMPANY  RECORDS</h6>
+//       <div style={{ textAlign: 'center' }}>
+//     <h2 style={{ fontWeight: 'bold', color: 'blue' }}>COMPANY RECORDS</h2>
 //       </div>
-//       {loading}
-//         <div className="filters">
-//           <div>
-//             <h6>Select Frequency</h6>
-//             <Select value={frequency} onChange={(values) => setFrequency(values)}>
-//               <Select.Option value="7">LAST 1 Week</Select.Option>
-//               <Select.Option value="30">LAST 1 Month</Select.Option>
-//               <Select.Option value="365">LAST 1 year</Select.Option>
-//               <Select.Option value="custom">custom</Select.Option>
-//             </Select>
-//             {frequency === "custom" && (
-//               <RangePicker
-//                 value={selectedDate}
-//                 onChange={(values) => setSelectedate(values)}
-//               />
-//             )}
-//           </div>
-//           <div>
-//             <button
-//               className="btn btn-primary"
-//               onClick={() => setShowModal(true)}
-//             >
-//               Add New
-//             </button>
-//           </div>
-//         </div>
+
+//       {loading && <div>Loading...</div>}
+//       <div className="filters" style={{ display: 'flex', justifyContent: 'space-between' }}>
+//       <div>
+//         <h6>Sort By Date</h6>
+//         <Select value={frequency} onChange={(values) => setFrequency(values)}>
+//           <Select.Option value="7">LAST 1 Week</Select.Option>
+//           <Select.Option value="30">LAST 1 Month</Select.Option>
+//           <Select.Option value="365">LAST 1 year</Select.Option>
+//           <Select.Option value="custom">Custom</Select.Option>
+//         </Select>
+//         {frequency === "custom" && (
+//           <RangePicker
+//             value={selectedDate}
+//             onChange={(values) => setSelectedate(values)}
+//           />
+//         )}
+//       </div>
+//       <div>
+//         <button
+//           className="btn btn-primary"
+//           onClick={() => setShowModal(true)}  icon={<PlusOutlined />}
+//         >
+//           Add New
+//         </button>
+//       </div>
+//     </div>
+    
+        
 //         <div className="content">
 //             <Table columns={columns} dataSource={allcompany} />
 //         </div>
 //         <Modal
-//           title={editable ? "Edit company" : "Add company"}
+//           title={editable ? "Edit Company" : "Add Company"}
 //           open={showModal}
 //           onCancel={() => setShowModal(false)}
-//           footer={false}
+//           footer={null}
 //         >
 //           <Form
 //             layout="vertical"
 //             onFinish={handleSubmit}
 //             initialValues={editable}
 //           >
-//             <Form.Item label="COMPANYNAME" name="CompanyName">
-//               <Input type="text" required />
+//             <Form.Item label="Company Name*" name="CompanyName" rules={[{ required: true, message: 'Please input company name' }]}>
+//               <Input type="text" />
 //             </Form.Item>
 //             <Form.Item label="Date" name="date">
-//               <Input type="date" />
+//               <DatePicker style={{ width: '100%' }} />
 //             </Form.Item>
-//             <Form.Item label="CTC" name="CTC">
-//               <Input type="text" required />
+//             <Form.Item label="CTC" name="CTC" rules={[{ required: true, message: 'Please input CTC' }]}>
+//               <Input type="text" />
 //             </Form.Item>
 //             <Form.Item label="Description" name="Description">
 //               <Input type="text" />
@@ -209,9 +213,20 @@
 // export default Companyhome;
 
 
-import React, { useState, useEffect, useCallback  } from "react";
+
+
+
+
+
+
+
+import React, { useState, useEffect } from "react";
 import { Form, Input, message, Modal, Select, Table, DatePicker } from "antd";
-import { EditOutlined, DeleteOutlined ,PlusOutlined} from "@ant-design/icons";
+import {
+  UnorderedListOutlined,
+  EditOutlined,
+  DeleteOutlined,
+} from "@ant-design/icons";
 import axios from "axios"; 
 import moment from "moment";
 const { RangePicker } = DatePicker;
@@ -219,19 +234,58 @@ const { RangePicker } = DatePicker;
 const Companyhome = () => {
     const [showModal, setShowModal] = useState(false);
     const [allcompany, setAllcompany] = useState([]);
-    const [loading, setLoading] = useState(false);
+      const [loading, setLoading] = useState(false);
     const [frequency, setFrequency] = useState("7");
     const [selectedDate, setSelectedate] = useState([]);
+    const [viewData, setViewData] = useState("table");
     const [editable, setEditable] = useState(null);
   
     //table data
+    // const columns = [
+    //   {
+    //     title: "Date",
+    //     dataIndex: "date",
+    //     render: (text) => <span>{moment(text).format("YYYY-MM-DD")}</span>,
+    //   },
+    //   {
+    //     title: "COMPANYNAME",
+    //     dataIndex: "CompanyName",
+    //   },
+    //   {
+    //     title: "CTC",
+    //     dataIndex: "CTC",
+    //   },
+    //   {
+    //     title: "Description",
+    //     dataIndex: "Description",
+    //   },
+    //   {
+    //     title: "Actions",
+    //     render: (text, record) => (
+    //       <div>
+    //         <EditOutlined
+    //           onClick={() => {
+    //             setEditable(record);
+    //             setShowModal(true);
+    //           }}
+    //         />
+    //         <DeleteOutlined
+    //           className="mx-2"
+    //           onClick={() => {
+    //             handleDelete(record);
+    //           }}
+    //         />
+    //       </div>
+    //     ),
+    //   },
+    // ];
   
     const columns = [
       {
         title: "Date",
         dataIndex: "date",
         key: "date",
-        render: (text) => <span>{moment(text).format("DD-MM-YYYY")}</span>,
+        render: (text) => <span>{moment(text).format("YYYY-MM-DD")}</span>,
       },
       {
         title: "COMPANYNAME",
@@ -246,7 +300,7 @@ const Companyhome = () => {
       {
         title: "Description",
         dataIndex: "Description",
-        key: "Description",
+        key: "description",
       },
       {
         title: "Actions",
@@ -273,7 +327,8 @@ const Companyhome = () => {
     //getall transactions
   
     //useEffect Hook
-      const getAllcompany = useCallback(async () => {
+    useEffect(() => {
+      const getAllcompany = async () => {
         try {
           const user = JSON.parse(localStorage.getItem("user"));
           setLoading(true);
@@ -285,19 +340,12 @@ const Companyhome = () => {
           setAllcompany(res.data);
           setLoading(false);
         } catch (error) {
-          message.error("Fetch Issue With company");
+          message.error("Ftech Issue With company");
         }
-    }, [frequency, selectedDate]);
+      };
+      getAllcompany();
+    }, [frequency, selectedDate, setAllcompany]);
   
-    
-
-    useEffect(()=>{
-      getAllcompany();
-    },[getAllcompany]);
-
-    useEffect(()=>{
-      getAllcompany();
-    }, [frequency, selectedDate,getAllcompany]);
     //delete handler
     const handleDelete = async (record) => {
       try {
@@ -306,17 +354,14 @@ const Companyhome = () => {
           transacationId: record._id,
         });
         setLoading(false);
-        message.success("Company Deleted!");
-        getAllcompany();
+        message.success("company Deleted!");
       } catch (error) {
         setLoading(false);
         console.log(error);
-        message.error("Unable to delete");
+        message.error("unable to delete");
       }
     };
   
-
-
     // form handling
     const handleSubmit = async (values) => {
       try {
@@ -331,82 +376,86 @@ const Companyhome = () => {
             transacationId: editable._id,
           });
           setLoading(false);
-          message.success("Company Updated Successfully");
+          message.success("company Updated Successfully");
         } else {
           await axios.post("company/add-company", {
             ...values,
             userid: user._id,
           });
           setLoading(false);
-          message.success("Company Added Successfully");
+          message.success("company Added Successfully");
         }
         setShowModal(false);
         setEditable(null);
-        getAllcompany();
       } catch (error) {
         setLoading(false);
-        message.error("Please fill all fields");
+        message.error("please fill all fields");
       }
     };
   
     return (
       <>
-      <div style={{ textAlign: 'center' }}>
-    <h2 style={{ fontWeight: 'bold', color: 'blue' }}>COMPANY RECORDS</h2>
-      </div>
-
-      {loading && <div>Loading...</div>}
-      <div className="filters" style={{ display: 'flex', justifyContent: 'space-between' }}>
       <div>
-        <h6>Sort By Date</h6>
-        <Select value={frequency} onChange={(values) => setFrequency(values)}>
-          <Select.Option value="7">LAST 1 Week</Select.Option>
-          <Select.Option value="30">LAST 1 Month</Select.Option>
-          <Select.Option value="365">LAST 1 year</Select.Option>
-          <Select.Option value="custom">Custom</Select.Option>
-        </Select>
-        {frequency === "custom" && (
-          <RangePicker
-            value={selectedDate}
-            onChange={(values) => setSelectedate(values)}
-          />
-        )}
+      <h6>COMPANY  RECORDS</h6>
       </div>
-      <div>
-        <button
-          className="btn btn-primary"
-          onClick={() => setShowModal(true)}  icon={<PlusOutlined />}
-        >
-          Add New
-        </button>
-      </div>
-    </div>
-    
-        
+      {loading}
+        <div className="filters">
+          <div>
+            <h6>Select Frequency</h6>
+            <Select value={frequency} onChange={(values) => setFrequency(values)}>
+              <Select.Option value="7">LAST 1 Week</Select.Option>
+              <Select.Option value="30">LAST 1 Month</Select.Option>
+              <Select.Option value="365">LAST 1 year</Select.Option>
+              <Select.Option value="custom">custom</Select.Option>
+            </Select>
+            {frequency === "custom" && (
+              <RangePicker
+                value={selectedDate}
+                onChange={(values) => setSelectedate(values)}
+              />
+            )}
+          </div>
+          <div className="switch-icons">
+            <UnorderedListOutlined
+              className={`mx-2 ${
+                viewData === "table" ? "active-icon" : "inactive-icon"
+              }`}
+              onClick={() => setViewData("table")}
+            />
+          </div>
+          <div>
+            <button
+              className="btn btn-primary"
+              onClick={() => setShowModal(true)}
+            >
+              Add New
+            </button>
+          </div>
+        </div>
         <div className="content">
             <Table columns={columns} dataSource={allcompany} />
         </div>
         <Modal
-          title={editable ? "Edit Company" : "Add Company"}
+          title={editable ? "Edit company" : "Add company"}
           open={showModal}
           onCancel={() => setShowModal(false)}
-          footer={null}
+          footer={false}
         >
           <Form
             layout="vertical"
             onFinish={handleSubmit}
             initialValues={editable}
           >
-            <Form.Item label="Company Name*" name="CompanyName" rules={[{ required: true, message: 'Please input company name' }]}>
-              <Input type="text" />
+            <Form.Item label="COMPANYNAME" name="CompanyName">
+              <Input type="text" required />
             </Form.Item>
             <Form.Item label="Date" name="date">
-              <DatePicker style={{ width: '100%' }} />
+              <Input type="date" />
             </Form.Item>
-            <Form.Item label="CTC" name="CTC" rules={[{ required: true, message: 'Please input CTC' }]}>
-              <Input type="text" />
+            <Form.Item label="CTC" name="CTC">
+              <Input type="text" required />
             </Form.Item>
-            <Form.Item label="Description" name="Description">
+            <Form.Item label="Description" name="description">
               <Input type="text" />
             </Form.Item>
             <div className="d-flex justify-content-end">
@@ -420,4 +469,5 @@ const Companyhome = () => {
       </>
     );
 };
+
 export default Companyhome;

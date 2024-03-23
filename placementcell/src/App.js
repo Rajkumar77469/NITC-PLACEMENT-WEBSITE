@@ -19,12 +19,13 @@
             import Adminhome from './Components/Admin/Adminhome';
             import Userhome from "./Components/Userhome.js";
             import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-        
+            import Footer from "./Components/Footer.js";
             // import "./App.css";
             // <Navbar />
             function App() {
               return (
                 <div >
+                  <Footer/>
                   <Router>
                     
                     <Routes>
