@@ -2,6 +2,7 @@ const express = require("express");
 const {
   loginController,
   registerController,
+  print,
 } = require("../Controler/userController");
 
 //router object
@@ -19,5 +20,8 @@ router.post("/register", registerController);
 // router
 //   .route("/register")
 //   .post(validate(signupSchema), registerController);
+
+
+
 
 module.exports = router;

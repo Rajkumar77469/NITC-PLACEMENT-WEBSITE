@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Spinner from "./Spinner";
 import Navbar from "./Navbar";
-import "./css/Loginpage.css";
+import "../css/Loginpage.css";
 const Login = () => {
  
   const [loading, setLoading] = useState(false);

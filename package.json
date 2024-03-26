@@ -11,7 +11,7 @@
     "path": "^0.12.7"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "nodemon server.js",
     "nodemon": "server.js",
     "placementcell": "npm start --prefix placementcell",
     "dev": "concurrently \"npm start\" \"npm run placementcell\" "
