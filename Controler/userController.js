@@ -3,8 +3,8 @@ const userModel = require("../Model/userModel");
 // login callback
 const loginController = async (req, res) => {
   try {
-    const { email, password } = req.body;
-    const user = await userModel.findOne({ email, password });
+    const { Email, password } = req.body;
+    const user = await userModel.findOne({ Email, password });
     if (!user) {
       return res.status(404).send("User Not Found");
     }

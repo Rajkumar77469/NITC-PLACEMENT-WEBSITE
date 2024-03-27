@@ -17,7 +17,7 @@
             import Register from "./Components/pages/Register";
             import Login from "./Components/pages/Login";
             import Adminhome from './Components/Admin/Adminhome';
-            import Userhome from "./Components/Userhome.js";
+            import Userhome from "./Components/UserHome.js";
             import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
             import Footer from "./Components/pages/Footer.js";
             // import "./App.css";

@@ -42,10 +42,10 @@ const Register = () => {
           onFinish={submitHandler}
         >
           <h2>Register Form</h2>
-          <Form.Item label="Name" name="name">
+          <Form.Item label="Name" name="Name">
             <Input type="text" required />
           </Form.Item>
-          <Form.Item label="Email" name="email">
+          <Form.Item label="Email" name="Email">
             <Input type="email" required />
           </Form.Item>
           <Form.Item label="Password" name="password">

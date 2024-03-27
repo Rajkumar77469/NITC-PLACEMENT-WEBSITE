@@ -56,7 +56,7 @@ const Login = () => {
             <Form layout="vertical" onFinish={submitHandler}>
               <h1>Login Form</h1>
 
-              <Form.Item label="Email" name="email">
+              <Form.Item label="Email" name="Email">
                 <Input type="email" required />
               </Form.Item>
               <Form.Item label="Password" name="password">
