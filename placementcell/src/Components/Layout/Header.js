@@ -607,7 +607,7 @@ const Header = () => {
           }
 
           .navbar {
-            background-color: #1890ff; /* Header background color */
+            background-color: #000066; /* Header background color */
           }
 
           .navbar-toggler {
@@ -624,7 +624,7 @@ const Header = () => {
           }
 
           .nav-link:hover {
-            color: #ffec3d; /* Hover color */
+            color: red; /* Hover color */
           }
 
           .btn-danger {
@@ -654,14 +654,14 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
             <div className="sliding-container">
               <h6 className="navbar-brand">
-                {loginUser && loginUser.name && loginUser.name.toUpperCase()} WELCOME TO NITC PLACEMENT MANAGEMENT SYSTEM 
+                {loginUser && loginUser.Name && loginUser.Name.toUpperCase()} WELCOME TO NITC PLACEMENT MANAGEMENT SYSTEM 
               </h6>
             </div>
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <h5 className="nav-link ">
                 <span style={{ fontSize: '24px', marginRight: '10px' }}>🔔</span>
-                  <UserOutlined /> {loginUser && loginUser.name && loginUser.name.toUpperCase()}
+                  <UserOutlined /> {loginUser && loginUser.Name && loginUser.Name.toUpperCase()}
                 </h5>
               </li>
               <li className="nav-item">

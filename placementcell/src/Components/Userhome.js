@@ -86,7 +86,7 @@ const UserHome = () => {
         <button style={{ padding: '10px 20px', fontSize: '16px', borderRadius: '5px', backgroundColor: '#28a745', color: '#fff', border: 'none', cursor: 'pointer' }}>Contact</button> {/* Contact Button */}
       </div>
       {studentDetails && (
-        <div>
+        <div className='detils'>
           <h1>Student Details:</h1>
           <p>Name: {studentDetails.Name}</p>
           <p>Enrollment: {studentDetails.Enrollment}</p>
@@ -105,6 +105,13 @@ const UserHome = () => {
 
         </div>
       )}
+      {!studentDetails &&
+      (
+        <div>
+          <h1>You are not registerd for upcomming placement drive please contact Admin:</h1>
+            </div>
+      )}
+
     </div>
   );
 };
