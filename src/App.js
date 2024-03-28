@@ -11,15 +11,15 @@
                 import "./css/toolbar.css";
             import React from 'react';
             // import Navbar from './Components/Navbar';
-            import Home from './Components/Home';
-            import AboutUs from "./Components/aboutUs";
-            import ContactUs from "./Components/ContactUs";
-            import Register from "./Components/Register";
-            import Login from "./Components/Login";
+            import Home from  "./Components/pages/Home.js";
+            import AboutUs from "./Components/pages/aboutUs";
+            import ContactUs from "./Components/pages/ContactUs";
+            import Register from "./Components/pages/Register";
+            import Login from "./Components/pages/Login";
             import Adminhome from './Components/Admin/Adminhome';
-            import Userhome from "./Components/Userhome.js";
+            import Userhome from "./Components/UserHome.js";
             import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-            import Footer from "./Components/Footer.js";
+            import Footer from "./Components/pages/Footer.js";
             // import "./App.css";
             // <Navbar />
             function App() {

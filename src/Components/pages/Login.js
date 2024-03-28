@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Spinner from "./Spinner";
 import Navbar from "./Navbar";
-import "./css/Loginpage.css";
+import "../css/Loginpage.css";
 const Login = () => {
  
   const [loading, setLoading] = useState(false);
@@ -56,7 +56,7 @@ const Login = () => {
             <Form layout="vertical" onFinish={submitHandler}>
               <h1>Login Form</h1>
 
-              <Form.Item label="Email" name="email">
+              <Form.Item label="Email" name="Email">
                 <Input type="email" required />
               </Form.Item>
               <Form.Item label="Password" name="password">

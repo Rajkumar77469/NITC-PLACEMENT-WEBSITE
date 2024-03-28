@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { Form, Input, message, Modal, Select, Table, DatePicker } from "antd";
 import {UnorderedListOutlined, EditOutlined, DeleteOutlined, PlusOutlined,DownloadOutlined,} from "@ant-design/icons";
 import axios from "axios";
-import Spinner from "../Spinner";
+import Spinner from "../pages/Spinner.js";
 import moment from "moment";
 import Layout from "../Layout/Layout.js";
 import COMPANYCOMPONENT from "../company/Companyhome.js";
