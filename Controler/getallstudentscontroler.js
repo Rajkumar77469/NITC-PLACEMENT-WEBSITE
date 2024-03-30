@@ -11,6 +11,8 @@
 //     res.status(500).json({ error: "Internal server error" });
 //   }
 // };
+
+
 const Student = require("../Model/studentmodel");
 
 // Controller method to fetch all student names

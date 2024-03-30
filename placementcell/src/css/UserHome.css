@@ -25,3 +25,27 @@
     margin-left: 1350px;
     font-size: x-large;
   }
+
+  /* //admin page */
+.Buttonstyle{
+background: #000066  !important;
+font-family: 'Times New Roman', Times, serif !important;
+font-weight: bold!important;
+border: 2px solid white;
+}
+
+.pagestyle{
+  background-image: linear-gradient(to right, #9679f7, #86fbf5, #9679f7);
+}
+/* .layout{
+  border:5px solid red;
+} */
+.custom-container{
+  .custom-container {
+    margin-top: 4px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    margin-left: 4px;
+  }
+
+}

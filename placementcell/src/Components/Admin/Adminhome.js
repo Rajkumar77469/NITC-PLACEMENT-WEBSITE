@@ -255,7 +255,7 @@ const Adminhome = () => {
   };
 
   return (
-    <div>
+    <div className="pagestyle">
     <Layout>
     
     <div style={{ textAlign: 'center' }}>
@@ -264,11 +264,12 @@ const Adminhome = () => {
       {loading && <Spinner />}
       <div className="filters" style={{ display: 'flex', justifyContent: 'space-between' }}>
         <div className="datefilter">
-          <h6>Sort By Enrollment Date</h6>
+          <h6 className="filterheading">Sort By Enrollment Date</h6>
           <Select value={frequency} onChange={(values) => setFrequency(values)}>
-            <Select.Option value="7">LAST 1 Week</Select.Option>
-            <Select.Option value="30">LAST 1 Month</Select.Option>
+  
             <Select.Option value="365">LAST 1 year</Select.Option>
+            <Select.Option value="30">LAST 1 Month</Select.Option>
+            <Select.Option value="7">LAST 1 Week</Select.Option>
             <Select.Option value="custom">Custom</Select.Option>
           </Select>
           {frequency === "custom" && (
@@ -305,16 +306,16 @@ const Adminhome = () => {
           />
         </div>
         <div>
-      <button type="primary apnibutton" onClick={handleDownload} icon={<DownloadOutlined />}>
-        Download 
+      <button type="primary apnibutton" onClick={handleDownload} >
+      {<DownloadOutlined />}  Download 
       </button>
     </div>
         <div>
           <button
-            className="btn btn-primary"
-            onClick={() => setShowModal(true)} icon={<PlusOutlined />}
+            className="btn btn-primary Buttonstyle"
+            onClick={() => setShowModal(true)} 
           >
-            Add New
+          {<PlusOutlined />} Add New
           </button>
         </div>
       </div>

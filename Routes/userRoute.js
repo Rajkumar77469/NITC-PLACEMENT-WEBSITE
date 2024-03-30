@@ -4,8 +4,8 @@ const {
   registerController,
   print,
 } = require("../Controler/userController");
-
-//router object
+const {getStudentDetailsByEmail}=require("../Controler/userStudentController");
+//router object=
 const router = express.Router();
 
 //routers
@@ -21,7 +21,6 @@ router.post("/register", registerController);
 //   .route("/register")
 //   .post(validate(signupSchema), registerController);
 
-
-
+ router.get("/student-details/:Email", getStudentDetailsByEmail);
 
 module.exports = router;

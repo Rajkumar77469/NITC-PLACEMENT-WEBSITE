@@ -193,19 +193,22 @@ const Interviewhome = () => {
     <h2 style={{ fontWeight: 'bold', color: 'blue' }}>INTERVIEW RECORDS</h2>
     </div>
       {loading && <div>Loading...</div>}
-      <div className="filters">
+      <div className="filters" style={{ display: 'flex', justifyContent: 'space-between' }}>
       <div style={{ textAlign: 'right' }}>
-      <Button type="primary" onClick={handleDownload} icon={<DownloadOutlined />}>
-        Download 
-      </Button>
+      <button type="primary" onClick={handleDownload} >
+      {<DownloadOutlined />} Download 
+      </button>
     </div>
     
-        <div style={{ flexGrow: 1 }}></div>
-        <div>
-          <Button type="primary" onClick={() => setShowModal(true)} icon={<PlusOutlined />}>
-            Add New
-          </Button>
-        </div>
+      
+    <div>
+    <button
+      className="btn btn-primary Buttonstyle "
+      onClick={() => setShowModal(true)} 
+    >
+    {<PlusOutlined />} Add New
+    </button>
+  </div>
       </div>
       <div className="content">
         <Table columns={columns} dataSource={allstudent} />

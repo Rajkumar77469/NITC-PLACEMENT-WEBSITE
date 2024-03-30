@@ -21,13 +21,36 @@
 
 // module.exports = { getStudentDetailsByEmail };
 
-const Student = require("../Model/studentmodel")
+// const Student = require("../Model/studentmodel")
+// const getStudentDetailsByEmail = async (req, res) => {
+//   try {
+//     const Email= req.params.Email;
+//     // Perform a case-insensitive search by converting email to lowercase
+//     const student = await Student.findOne({Email});
+    
+//     if (!student) {
+//       return res.status(404).json({ error: 'Student not found' });
+//     }
+
+//     res.status(200).json({ student });
+//   } catch (error) {
+//     console.error('student you are fetching are not exsit:', error);
+//     res.status(500).json({ error: 'Internal server error' });
+//   }
+// };
+
+// module.exports = {
+//   getStudentDetailsByEmail
+// };
+
+
+const Student = require("../Model/studentmodel");
+
 const getStudentDetailsByEmail = async (req, res) => {
   try {
-    const Email= req.params.Email;
-    // Perform a case-insensitive search by converting email to lowercase
-    const student = await Student.findOne({Email});
-    
+    const email = req.params.Email.toLowerCase(); // Convert email to lowercase
+    const student = await Student.findOne({ Email: email });
+
     if (!student) {
       return res.status(404).json({ error: 'Student not found' });
     }

@@ -21,6 +21,18 @@ const companySchema = new mongoose.Schema(
       type: Date,
       required: [true, "date is required"],
     },
+    Tenth:{
+      type:Number,
+    },
+    Twelth:{
+      type:Number,
+    },
+    Graduation:{
+      type:Number,
+    },
+    Cgpa:{
+      type:Number,
+    }
   },
   { timestamps: true }
 );

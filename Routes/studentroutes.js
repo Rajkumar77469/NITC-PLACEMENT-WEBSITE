@@ -20,4 +20,5 @@ router.post("/delete-student", deletestudent);
 //get transections
 router.post("/get-student", getAllstudent);
 router.get("/student-names", getAllStudentNames);
+
 module.exports = router;

@@ -42,14 +42,14 @@ const userSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
-  notifcation: {
-    type: Array,
-    default: [],
-  },
-  seennotification: {
-    type: Array,
-    default: [],
-  },
+  // notifcation: {
+  //   type: Array,
+  //   default: [],
+  // },
+  // seennotification: {
+  //   type: Array,
+  //   default: [],
+  // },
 });
 
 const userModel = mongoose.model("users", userSchema);
