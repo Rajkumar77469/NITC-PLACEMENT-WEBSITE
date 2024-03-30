@@ -97,14 +97,3 @@
     justify-content: center;
     z-index: 1000; /* Ensure the spinner is on top of other content */
   }
-  
-  .detils{
-    font-weight: bold;
-    font-family: 'Times New Roman', Times, serif;
-    color: blue;
-    margin-left:100px;
-    border:4px solid yellow;
-    display: block;
-    z-index:1000;
-    flex-direction: column;
-  }

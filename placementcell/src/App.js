@@ -9,6 +9,7 @@
                 import "./css/sidedrawer.css"
                 import "./css/togglebutton.css";
                 import "./css/toolbar.css";
+                import "./css/UserHome.css"
             import React from 'react';
             // import Navbar from './Components/Navbar';
             import Home from  "./Components/pages/Home.js";

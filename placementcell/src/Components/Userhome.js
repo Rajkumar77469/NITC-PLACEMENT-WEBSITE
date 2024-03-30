@@ -81,28 +81,38 @@ const UserHome = () => {
   return (
     <div>
       <Layout />
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px' }}>
-        <button style={{ marginRight: '10px', padding: '10px 20px', fontSize: '16px', borderRadius: '5px', backgroundColor: '#28a745', color: '#fff', border: 'none', cursor: 'pointer' }}>View Profile</button> {/* View Profile Button */}
-        <button style={{ padding: '10px 20px', fontSize: '16px', borderRadius: '5px', backgroundColor: '#28a745', color: '#fff', border: 'none', cursor: 'pointer' }}>Contact</button> {/* Contact Button */}
-      </div>
+       
       {studentDetails && (
+        <div>
+        <div>
+        <p className='placementstatusheading'>STATUS</p>
+        <h3 className='placementstatus'>
+        {studentDetails.Status.toUpperCase()}</h3>
+       </div>
         <div className='detils'>
-          <h1>Student Details:</h1>
-          <p>Name: {studentDetails.Name}</p>
-          <p>Enrollment: {studentDetails.Enrollment}</p>
-          <p>Email: {studentDetails.Email}</p>
-          <p>Gender: {studentDetails.Gender}</p>
-          <p> Mob: {studentDetails.Mob}</p>
-          <p>Branch: {studentDetails.Branch}</p>
-          <p> Address: {studentDetails.Address}</p>
-          <p>Tenth: {studentDetails.Tenth}</p>
-          <p>Twelth: {studentDetails.Twelth}</p>
-          <p>Cgpa: {studentDetails.Cgpa}</p>
-          <p>date: {studentDetails.date}</p>
-          <p>Dob: {studentDetails.Dob}</p>
-          <p>Status: {studentDetails.Status}</p>
+          Name: {studentDetails.Name}
+          <br></br>
+          Enrollment: {studentDetails.Enrollment}
+          <br></br>
+          Email: {studentDetails.Email}
+          <br></br>
+          Gender: {studentDetails.Gender}
+          <br></br>
+           Mob: {studentDetails.Mob}
+           <br></br>
+          Branch: {studentDetails.Branch}
+          <br></br>
+           Address: {studentDetails.Address}
+           <br></br>
+          Tenth: {studentDetails.Tenth}
+          <br></br>
+          Twelth: {studentDetails.Twelth}
+          <br></br>
+          Cgpa: {studentDetails.Cgpa}
+          
          
 
+        </div>
         </div>
       )}
       {!studentDetails &&
@@ -117,3 +127,8 @@ const UserHome = () => {
 };
 
 export default UserHome;
+
+// <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px' }}>
+// <button style={{ marginRight: '10px', padding: '10px 20px', fontSize: '16px', borderRadius: '5px', backgroundColor: '#28a745', color: '#fff', border: 'none', cursor: 'pointer' }}>View Profile</button> {/* View Profile Button */}
+// <button style={{ padding: '10px 20px', fontSize: '16px', borderRadius: '5px', backgroundColor: '#28a745', color: '#fff', border: 'none', cursor: 'pointer' }}>Contact</button> {/* Contact Button */}
+// </div>
