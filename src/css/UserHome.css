@@ -1,0 +1,27 @@
+  
+  .detils{
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left:100px;
+    /* border:4px solid yellow; */
+    display: inline-block;
+    flex-direction: column;
+    border: 2px solid black;
+    /* flex-direction: column; */
+    /* border-radius: 12px; */
+    color:#000066;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 2.5;
+
+  }
+  .placementstatus{
+    margin-left: 1350px;
+    /* border:12px solid red; */
+    color: green;
+    /* border:2px solid red; */
+    /* margin-bottom: 300px; */
+  }
+  .placementstatusheading{
+    margin-left: 1350px;
+    font-size: x-large;
+  }
