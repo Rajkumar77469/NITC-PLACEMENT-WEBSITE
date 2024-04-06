@@ -219,11 +219,10 @@
 
 
 
-
+// UnorderedListOutlined,
 import React, { useState, useEffect } from "react";
 import { Form, Input, message, Modal, Select, Table, DatePicker } from "antd";
 import {
-  UnorderedListOutlined,
   EditOutlined,
   DeleteOutlined,
   PlusOutlined ,
@@ -321,7 +320,7 @@ const Companyhome = () => {
       {
         title: "Description",
         dataIndex: "Description",
-        key: "description",
+        key: "Description",
       },
       {
         title: "Actions",
@@ -480,7 +479,7 @@ const Companyhome = () => {
       <Form.Item label="Cgpa" name="Cgpa">
       <Input type="text" required />
     </Form.Item>
-            <Form.Item label="Description" name="description">
+            <Form.Item label="Description" name="Description">
               <Input type="text" />
             </Form.Item>
             <div className="d-flex justify-content-end">

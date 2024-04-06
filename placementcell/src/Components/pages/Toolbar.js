@@ -1,9 +1,6 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
-// import ToggleButton from "./ToggleButton";
 import logo from "./logonitc-removebg-preview.png"
-// C:\Users\rajku\OneDrive\Desktop\ccd\placementcell\src\Components\logonitc-removebg-preview.png
-// import logoImage from "./logonitc.jpg"
 import logoImage from "./G20_India_2023_logo.png"
 const Toolbar = props => (
 
@@ -21,12 +18,6 @@ const Toolbar = props => (
           <li>
             <NavLink to="/about-us" exact="true" className="activeclass">
               About NITC
-            </NavLink>
-          </li>
-       
-          <li>
-            <NavLink to="/our-recruiters" exact="true" className="activeclass">
-              Our Recruiters
             </NavLink>
           </li>
           <li className="dropdownmenu">
@@ -50,7 +41,11 @@ const Toolbar = props => (
             </div>
           </li>
           
-        
+          <li>
+            <NavLink to="/our-recruiters" exact className="activeclass">
+              Our Recruiters
+            </NavLink>
+          </li>
           <li>
             <NavLink to="/procedure-and-policies" exact="true" className="activeclass">
               Procedure

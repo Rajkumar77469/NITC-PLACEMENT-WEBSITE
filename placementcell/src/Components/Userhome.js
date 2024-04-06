@@ -1066,24 +1066,651 @@
 
 
 ////testing code 
-import React, { useState, useEffect, useCallback } from 'react';
+
+// import React, { useState, useEffect, useCallback } from 'react';
+// import axios from 'axios';
+// import Layout from './Layout/Layout';
+
+// const UserHome = () => {
+//   const [studentDetails, setStudentDetails] = useState(null);
+//   const [eligibleCompanies, setEligibleCompanies] = useState([]);
+//   const [appliedCompanies, setAppliedCompanies] = useState([]);
+
+//   useEffect(() => {
+//     // Retrieve applied companies from local storage on component mount
+//     const storedAppliedCompanies = localStorage.getItem('appliedCompanies');
+//     if (storedAppliedCompanies) {
+//       setAppliedCompanies(JSON.parse(storedAppliedCompanies));
+//     }
+//   }, []);
+
+//   const fetchData = useCallback(async () => {
+//     try {
+//       const response = await axios.get('/company/student-company');
+//       const { companys } = response.data;
+//       const filteredCompanies = companys.filter(company => {
+//         return (
+//           company.Tenth <= studentDetails.Tenth &&
+//           company.Twelth <= studentDetails.Twelth &&
+//           company.Graduation <= studentDetails.Graduation &&
+//           company.Cgpa <= studentDetails.Cgpa
+//         );
+//       });
+//       setEligibleCompanies(filteredCompanies);
+//     } catch (error) {
+//       console.error('Error fetching company details:', error);
+//     }
+//   }, [studentDetails]);
+
+//   useEffect(() => {
+//     const fetchStudentDetails = async () => {
+//       try {
+//         const user = JSON.parse(localStorage.getItem('user'));
+//         const response = await axios.get(`/users/student-details/${user.Email}`);
+//         setStudentDetails(response.data.student);
+//       } catch (error) {
+//         console.error('Error fetching student details:', error);
+//       }
+//     };
+
+//     fetchStudentDetails();
+//   }, []);
+
+//   useEffect(() => {
+//     if (studentDetails) {
+//       fetchData();
+//     }
+//   }, [studentDetails, fetchData]);
+  
+//   useEffect(() => {
+//     localStorage.setItem('appliedCompanies', JSON.stringify(appliedCompanies));
+//   }, [appliedCompanies]);
+
+//   const formatDate = (dateString) => {
+//     const date = new Date(dateString);
+//     return `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
+//   };
+
+//   const applyToCompany = async (companyName) => {
+//     try {
+//       setAppliedCompanies([...appliedCompanies, companyName]);
+      
+//       // Perform asynchronous operations
+//       await axios.post('/users/appliedcompany', { companyName });
+  
+//       // Check if Excel sheet for this company exists
+//       const response = await axios.get(`/users/excel-sheet/${companyName}`);
+//       let sheetExists = true;
+//       if (!response.data) {
+//         sheetExists = false;
+//       }
+  
+//       // Prepare data to save
+//       const dataToSave = { companyName, ...studentDetails };
+  
+//       if (sheetExists) {
+//         // Add data to existing sheet
+//         await axios.post(`/users/add-to-excel/${companyName}`, dataToSave);
+//       } else {
+//         // Create new sheet and add data
+//         await axios.post('/users/create-excel-sheet', { companyName });
+//         await axios.post(`/users/add-to-excel/${companyName}`, dataToSave);
+//       }
+  
+//       fetchData();
+//     } catch (error) {
+//       console.error('Error applying to company:', error);
+//     }
+//   };
+  
+//   return (
+//     <div className="user-home">
+//       <Layout />
+//       <div className="content">
+//         <div className="student-details">
+//           {studentDetails ? (
+//             <>
+//               <div className="details">
+//                 <p><span className="label">Name:</span> {studentDetails.Name}</p>
+//                 <p><span className="label">Enrollment:</span> {studentDetails.Enrollment}</p>
+//                 <p><span className="label">Email:</span> {studentDetails.Email}</p>
+//                 <p><span className="label">Gender:</span> {studentDetails.Gender}</p>
+//                 <p><span className="label">Mob:</span> {studentDetails.Mob}</p>
+//                 <p><span className="label">Branch:</span> {studentDetails.Branch}</p>
+//                 <p><span className="label">Address:</span> {studentDetails.Address}</p>
+//                 <p><span className="label">Tenth:</span> {studentDetails.Tenth}</p>
+//                 <p><span className="label">Twelfth:</span> {studentDetails.Twelth}</p>
+//                 <p><span className="label">Cgpa:</span> {studentDetails.Cgpa}</p>
+//               </div>
+//               <div className='status'>
+//                 <p><span className='label'>STATUS:</span> {studentDetails.Status.toUpperCase()}</p>
+//               </div>
+//             </>
+//           ) : (
+//             <div>
+//               <h1>You are not registered for the upcoming placement drive. Please contact Admin.</h1>
+//             </div>
+//           )}
+//         </div>
+//         <div className="companies">
+//           {eligibleCompanies.map((company, index) => (
+//             <div key={index} className="company">
+//               <h1>{company.CompanyName}</h1>
+//               <p><span className="label">CTC:</span> {company.CTC}</p>
+//               <p><span className="label">Description:</span> {company.Description}</p>
+//               <p><span className="label">Date:</span> {formatDate(company.Date)}</p>
+//               {/* Disable the button if the company is already applied */}
+//               <button
+//                 onClick={() => applyToCompany(company.CompanyName)}
+//                 disabled={appliedCompanies.includes(company.CompanyName)}
+//               >
+//                 {appliedCompanies.includes(company.CompanyName) ? 'Applied' : 'Apply'}
+//               </button>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default UserHome;
+
+
+// //resume uploading testing
+
+// import React, { useState, useEffect, useCallback } from 'react';
+// import axios from 'axios';
+// import Layout from './Layout/Layout';
+
+// const UserHome = () => {
+//   const [studentDetails, setStudentDetails] = useState(null);
+//   const [eligibleCompanies, setEligibleCompanies] = useState([]);
+//   const [appliedCompanies, setAppliedCompanies] = useState([]);
+//   const [resume, setResume] = useState(null); // New state for storing resume
+//   const [resumeRequiredError, setResumeRequiredError] = useState(false); // New state for error message
+
+//   useEffect(() => {
+//     // Retrieve applied companies from local storage on component mount
+//     const storedAppliedCompanies = localStorage.getItem('appliedCompanies');
+//     if (storedAppliedCompanies) {
+//       setAppliedCompanies(JSON.parse(storedAppliedCompanies));
+//     }
+//   }, []);
+
+//   const fetchData = useCallback(async () => {
+//     try {
+//       const response = await axios.get('/company/student-company');
+//       const { companys } = response.data;
+//       const filteredCompanies = companys.filter(company => {
+//         return (
+//           company.Tenth <= studentDetails.Tenth &&
+//           company.Twelth <= studentDetails.Twelth &&
+//           company.Graduation <= studentDetails.Graduation &&
+//           company.Cgpa <= studentDetails.Cgpa
+//         );
+//       });
+//       setEligibleCompanies(filteredCompanies);
+//     } catch (error) {
+//       console.error('Error fetching company details:', error);
+//     }
+//   }, [studentDetails]);
+
+//   useEffect(() => {
+//     const fetchStudentDetails = async () => {
+//       try {
+//         const user = JSON.parse(localStorage.getItem('user'));
+//         const response = await axios.get(`/users/student-details/${user.Email}`);
+//         setStudentDetails(response.data.student);
+//       } catch (error) {
+//         console.error('Error fetching student details:', error);
+//       }
+//     };
+
+//     fetchStudentDetails();
+//   }, []);
+
+//   useEffect(() => {
+//     if (studentDetails) {
+//       fetchData();
+//     }
+//   }, [studentDetails, fetchData]);
+  
+//   useEffect(() => {
+//     localStorage.setItem('appliedCompanies', JSON.stringify(appliedCompanies));
+//   }, [appliedCompanies]);
+
+//   const formatDate = (dateString) => {
+//     const date = new Date(dateString);
+//     return `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
+//   };
+
+//   const handleResumeChange = (event) => {
+//     // When the user selects a file, set the selected file to the state
+//     const file = event.target.files[0];
+//     setResume(file);
+//   };
+
+//   const applyToCompany = async (companyName) => {
+//     try {
+//       if (!resume) {
+//         setResumeRequiredError(true);
+//         return; // Stop further execution
+//       }
+
+//       setAppliedCompanies([...appliedCompanies, companyName]);
+      
+//       // Perform asynchronous operations
+//       await axios.post('/users/appliedcompany', { companyName });
+  
+//       // Check if Excel sheet for this company exists
+//       const response = await axios.get(`/users/excel-sheet/${companyName}`);
+//       let sheetExists = true;
+//       if (!response.data) {
+//         sheetExists = false;
+//       }
+  
+//       // Prepare data to save
+//       const dataToSave = { companyName, ...studentDetails };
+  
+//       if (sheetExists) {
+//         // Add data to existing sheet
+//         await axios.post(`/users/add-to-excel/${companyName}`, dataToSave);
+//       } else {
+//         // Create new sheet and add data
+//         await axios.post('/users/create-excel-sheet', { companyName });
+//         await axios.post(`/users/add-to-excel/${companyName}`, dataToSave);
+//       }
+
+//       // If resume is selected, upload it
+//       if (resume) {
+//         const formData = new FormData();
+//         formData.append('resume', resume);
+//         await axios.post(`/users/upload-resume/${companyName}`, formData);
+//       }
+  
+//       fetchData();
+//     } catch (error) {
+//       console.error('Error applying to company:', error);
+//     }
+//   };
+  
+//   return (
+//     <div className="user-home">
+//       <Layout />
+//       <div className="content">
+//         <div className="student-details">
+//           {studentDetails ? (
+//             <>
+//               <div className="details">
+//                 <p><span className="label">Name:</span> {studentDetails.Name}</p>
+//                 <p><span className="label">Enrollment:</span> {studentDetails.Enrollment}</p>
+//                 <p><span className="label">Email:</span> {studentDetails.Email}</p>
+//                 <p><span className="label">Gender:</span> {studentDetails.Gender}</p>
+//                 <p><span className="label">Mob:</span> {studentDetails.Mob}</p>
+//                 <p><span className="label">Branch:</span> {studentDetails.Branch}</p>
+//                 <p><span className="label">Address:</span> {studentDetails.Address}</p>
+//                 <p><span className="label">Tenth:</span> {studentDetails.Tenth}</p>
+//                 <p><span className="label">Twelfth:</span> {studentDetails.Twelth}</p>
+//                 <p><span className="label">Cgpa:</span> {studentDetails.Cgpa}</p>
+//               </div>
+//               <div className='status'>
+//                 <p><span className='label'>STATUS:</span> {studentDetails.Status.toUpperCase()}</p>
+//               </div>
+//             </>
+//           ) : (
+//             <div>
+//               <h1>You are not registered for the upcoming placement drive. Please contact Admin.</h1>
+//             </div>
+//           )}
+//         </div>
+//         <div className="companies">
+//           {eligibleCompanies.map((company, index) => (
+//             <div key={index} className="company">
+//               <h1>{company.CompanyName}</h1>
+//               <p><span className="label">CTC:</span> {company.CTC}</p>
+//               <p><span className="label">Description:</span> {company.Description}</p>
+//               <p><span className="label">Date:</span> {formatDate(company.Date)}</p>
+//               {/* Display error message if resume is required and not uploaded */}
+//               {resumeRequiredError && <p>Please upload your resume before applying.</p>}
+//               <button
+//               onClick={() => applyToCompany(company.CompanyName)}
+//               disabled={appliedCompanies.includes(company.CompanyName)}
+//             >
+//               {appliedCompanies.includes(company.CompanyName) ? 'Applied' : 'Apply'}
+//             </button>
+            
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//       {/* Add file input field for resume */}
+//       <input type="file" onChange={handleResumeChange} />
+//     </div>
+//   );
+// };
+
+// export default UserHome;--------------------corrct
+
+
+
+// import React, { useState, useEffect, useCallback } from 'react';
+// import axios from 'axios';
+// import Layout from './Layout/Layout';
+
+// const UserHome = () => {
+//   const [studentDetails, setStudentDetails] = useState(null);
+//   const [eligibleCompanies, setEligibleCompanies] = useState([]);
+//   const [appliedCompanies, setAppliedCompanies] = useState([]);
+//   const [resume, setResume] = useState(null);
+//   const [resumeRequiredError, setResumeRequiredError] = useState(false);
+
+//   const fetchData = useCallback(async () => {
+//     try {
+//       const response = await axios.get('/company/student-company');
+//       const { companys } = response.data;
+//       const filteredCompanies = companys.filter(company => {
+//         return (
+//           company.Tenth <= studentDetails.Tenth &&
+//           company.Twelth <= studentDetails.Twelth &&
+//           company.Graduation <= studentDetails.Graduation &&
+//           company.Cgpa <= studentDetails.Cgpa
+//         );
+//       });
+//       setEligibleCompanies(filteredCompanies);
+//     } catch (error) {
+//       console.error('Error fetching company details:', error);
+//     }
+//   }, [studentDetails]);
+
+//   useEffect(() => {
+//     const fetchStudentDetails = async () => {
+//       try {
+//         const user = JSON.parse(localStorage.getItem('user'));
+//         const response = await axios.get(`/users/student-details/${user.Email}`);
+//         setStudentDetails(response.data.student);
+//       } catch (error) {
+//         console.error('Error fetching student details:', error);
+//       }
+//     };
+
+//     fetchStudentDetails();
+//   }, []);
+
+//   useEffect(() => {
+//     if (studentDetails) {
+//       fetchData();
+//     }
+//   }, [studentDetails, fetchData]); // Added fetchData to the dependency array
+
+//   useEffect(() => {
+//     const storedAppliedCompanies = localStorage.getItem('appliedCompanies');
+//     if (storedAppliedCompanies) {
+//       setAppliedCompanies(JSON.parse(storedAppliedCompanies));
+//     }
+//   }, []);
+
+//   useEffect(() => {
+//     localStorage.setItem('appliedCompanies', JSON.stringify(appliedCompanies));
+//   }, [appliedCompanies]);
+
+//   const formatDate = (dateString) => {
+//     const date = new Date(dateString);
+//     return `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
+//   };
+
+//   const handleResumeChange = (event) => {
+//     const file = event.target.files[0];
+//     setResume(file);
+//   };
+
+//   const applyToCompany = async (companyName) => {
+//     try {
+//       if (!resume) {
+//         setResumeRequiredError(true);
+//         return;
+//       }
+
+//       setAppliedCompanies([...appliedCompanies, companyName]);
+
+//       await axios.post('/users/appliedcompany', { companyName });
+
+//       const response = await axios.get(`/users/excel-sheet/${companyName}`);
+//       let sheetExists = true;
+//       if (!response.data) {
+//         sheetExists = false;
+//       }
+
+//       const dataToSave = { companyName, ...studentDetails };
+
+//       if (sheetExists) {
+//         await axios.post(`/users/add-to-excel/${companyName}`, dataToSave);
+//       } else {
+//         await axios.post('/users/create-excel-sheet', { companyName });
+//         await axios.post(`/users/add-to-excel/${companyName}`, dataToSave);
+//       }
+
+//       if (resume) {
+//         const formData = new FormData();
+//         formData.append('resume', resume);
+//         await axios.post(`/users/upload-resume/${companyName}`, formData);
+//       }
+
+//       fetchData();
+//     } catch (error) {
+//       console.error('Error applying to company:', error);
+//     }
+//   };
+
+//   return (
+//     <div className="user-home">
+//       <Layout />
+//       <div className="content">
+//         <div className="student-details">
+//           {studentDetails ? (
+//             <>
+//               <div className="details">
+//                 <p><span className="label">Name:</span> {studentDetails.Name}</p>
+//                 <p><span className="label">Enrollment:</span> {studentDetails.Enrollment}</p>
+//                 <p><span className="label">Email:</span> {studentDetails.Email}</p>
+//                 <p><span className="label">Gender:</span> {studentDetails.Gender}</p>
+//                 <p><span className="label">Mob:</span> {studentDetails.Mob}</p>
+//                 <p><span className="label">Branch:</span> {studentDetails.Branch}</p>
+//                 <p><span className="label">Address:</span> {studentDetails.Address}</p>
+//                 <p><span className="label">Tenth:</span> {studentDetails.Tenth}</p>
+//                 <p><span className="label">Twelfth:</span> {studentDetails.Twelth}</p>
+//                 <p><span className="label">Cgpa:</span> {studentDetails.Cgpa}</p>
+//               </div>
+//               <div className='status'>
+//                 <p><span className='label'>STATUS:</span> {studentDetails.Status.toUpperCase()}</p>
+//               </div>
+//             </>
+//           ) : (
+//             <div>
+//               <h1>You are not registered for the upcoming placement drive. Please contact Admin.</h1>
+//             </div>
+//           )}
+//         </div>
+//         <div className="companies">
+//           {eligibleCompanies.map((company, index) => (
+//             <div key={index} className="company">
+//               <h1>{company.CompanyName}</h1>
+//               <p><span className="label">CTC:</span> {company.CTC}</p>
+//               <p><span className="label">Description:</span> {company.Description}</p>
+//               <p><span className="label">Date:</span> {formatDate(company.Date)}</p>
+//               {resumeRequiredError && <p>Please upload your resume before applying.</p>}
+//               <button
+//                 onClick={() => applyToCompany(company.CompanyName)}
+//                 disabled={appliedCompanies.includes(company.CompanyName)}
+//               >
+//                 {appliedCompanies.includes(company.CompanyName) ? 'Applied' : 'Apply'}
+//               </button>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//       <input type="file" onChange={handleResumeChange} />
+//     </div>
+//   );
+// };
+
+// export default UserHome;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState, useEffect } from 'react';
+// import axios from 'axios';
+// import Layout from './Layout/Layout';
+
+// const UserHome = () => {
+//   const [studentDetails, setStudentDetails] = useState(null);
+//   const [eligibleCompanies, setEligibleCompanies] = useState([]);
+//   const [appliedCompanies, setAppliedCompanies] = useState([]);
+
+//   const fetchData = async () => {
+//     try {
+//       const response = await axios.get('/company/student-company');
+//       const { companys } = response.data;
+//       const filteredCompanies = companys.filter(company => {
+//         return (
+//           company.Tenth <= studentDetails.Tenth &&
+//           company.Twelth <= studentDetails.Twelth &&
+//           company.Graduation <= studentDetails.Graduation &&
+//           company.Cgpa <= studentDetails.Cgpa
+//         );
+//       });
+//       setEligibleCompanies(filteredCompanies);
+//     } catch (error) {
+//       console.error('Error fetching company details:', error);
+//     }
+//   };
+
+//   useEffect(() => {
+//     const fetchStudentDetails = async () => {
+//       try {
+//         const user = JSON.parse(localStorage.getItem('user'));
+//         const response = await axios.get(`/users/student-details/${user.Email}`);
+//         setStudentDetails(response.data.student);
+//       } catch (error) {
+//         console.error('Error fetching student details:', error);
+//       }
+//     };
+
+//     fetchStudentDetails();
+//   }, []);
+
+//   useEffect(() => {
+//     if (studentDetails) {
+//       fetchData();
+//     }
+//   }, [studentDetails]);
+
+//   const formatDate = (dateString) => {
+//     const date = new Date(dateString);
+//     return `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
+//   };
+
+//   const applyToCompany = async (companyName) => {
+//     try {
+//       // Disable the button immediately upon clicking
+//       setAppliedCompanies([...appliedCompanies, companyName]);
+      
+//       // Perform asynchronous operations
+//       await axios.post('/users/appliedcompany', { companyName });
+//       const dataToSave = { companyName, ...studentDetails };
+//       await axios.post('/users/save-to-excel', dataToSave);
+
+//       // After completion, update the state
+//       fetchData();
+//     } catch (error) {
+//       console.error('Error applying to company:', error);
+//     }
+//   };
+
+//   return (
+//     <div className="user-home">
+//       <Layout />
+//       <div className="content">
+//         <div className="student-details">
+//           {studentDetails ? (
+//             <>
+//               <div className="details">
+//                 <p><span className="label">Name:</span> {studentDetails.Name}</p>
+//                 <p><span className="label">Enrollment:</span> {studentDetails.Enrollment}</p>
+//                 <p><span className="label">Email:</span> {studentDetails.Email}</p>
+//                 <p><span className="label">Gender:</span> {studentDetails.Gender}</p>
+//                 <p><span className="label">Mob:</span> {studentDetails.Mob}</p>
+//                 <p><span className="label">Branch:</span> {studentDetails.Branch}</p>
+//                 <p><span className="label">Address:</span> {studentDetails.Address}</p>
+//                 <p><span className="label">Tenth:</span> {studentDetails.Tenth}</p>
+//                 <p><span className="label">Twelfth:</span> {studentDetails.Twelth}</p>
+//                 <p><span className="label">Cgpa:</span> {studentDetails.Cgpa}</p>
+//               </div>
+//               <div className='status'>
+//                 <p><span className='label'>STATUS:</span> {studentDetails.Status.toUpperCase()}</p>
+//               </div>
+//             </>
+//           ) : (
+//             <div>
+//               <h1>You are not registered for the upcoming placement drive. Please contact Admin.</h1>
+//             </div>
+//           )}
+//         </div>
+//         <div className="companies">
+//           {eligibleCompanies.map((company, index) => (
+//             <div key={index} className="company">
+//               <h1>{company.CompanyName}</h1>
+//               <p><span className="label">CTC:</span> {company.CTC}</p>
+//               <p><span className="label">Description:</span> {company.Description}</p>
+//               <p><span className="label">Date:</span> {formatDate(company.Date)}</p>
+//               {/* Disable the button if the company is already applied */}
+//               <button
+//                 onClick={() => applyToCompany(company.CompanyName)}
+//                 disabled={appliedCompanies.includes(company.CompanyName)}
+//               >
+//                 {appliedCompanies.includes(company.CompanyName) ? 'Applied' : 'Apply'}
+//               </button>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default UserHome;
+
+
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Layout from './Layout/Layout';
 
 const UserHome = () => {
   const [studentDetails, setStudentDetails] = useState(null);
   const [eligibleCompanies, setEligibleCompanies] = useState([]);
-  const [appliedCompanies, setAppliedCompanies] = useState([]);
-
-  useEffect(() => {
-    // Retrieve applied companies from local storage on component mount
+  const [appliedCompanies, setAppliedCompanies] = useState(() => {
     const storedAppliedCompanies = localStorage.getItem('appliedCompanies');
-    if (storedAppliedCompanies) {
-      setAppliedCompanies(JSON.parse(storedAppliedCompanies));
-    }
-  }, []);
+    return storedAppliedCompanies ? JSON.parse(storedAppliedCompanies) : [];
+  });
 
-  const fetchData = useCallback(async () => {
+  const fetchData = async () => {
     try {
       const response = await axios.get('/company/student-company');
       const { companys } = response.data;
@@ -1099,7 +1726,7 @@ const UserHome = () => {
     } catch (error) {
       console.error('Error fetching company details:', error);
     }
-  }, [studentDetails]);
+  };
 
   useEffect(() => {
     const fetchStudentDetails = async () => {
@@ -1119,8 +1746,8 @@ const UserHome = () => {
     if (studentDetails) {
       fetchData();
     }
-  }, [studentDetails, fetchData]);
-  
+  }, [studentDetails]);
+
   useEffect(() => {
     localStorage.setItem('appliedCompanies', JSON.stringify(appliedCompanies));
   }, [appliedCompanies]);
@@ -1132,36 +1759,21 @@ const UserHome = () => {
 
   const applyToCompany = async (companyName) => {
     try {
-      setAppliedCompanies([...appliedCompanies, companyName]);
+      // Disable the button immediately upon clicking
+      setAppliedCompanies(prevAppliedCompanies => [...prevAppliedCompanies, companyName]);
       
       // Perform asynchronous operations
       await axios.post('/users/appliedcompany', { companyName });
-  
-      // Check if Excel sheet for this company exists
-      const response = await axios.get(`/users/excel-sheet/${companyName}`);
-      let sheetExists = true;
-      if (!response.data) {
-        sheetExists = false;
-      }
-  
-      // Prepare data to save
       const dataToSave = { companyName, ...studentDetails };
-  
-      if (sheetExists) {
-        // Add data to existing sheet
-        await axios.post(`/users/add-to-excel/${companyName}`, dataToSave);
-      } else {
-        // Create new sheet and add data
-        await axios.post('/users/create-excel-sheet', { companyName });
-        await axios.post(`/users/add-to-excel/${companyName}`, dataToSave);
-      }
-  
+      await axios.post('/users/save-to-excel', dataToSave);
+
+      // After completion, update the state
       fetchData();
     } catch (error) {
       console.error('Error applying to company:', error);
     }
   };
-  
+
   return (
     <div className="user-home">
       <Layout />

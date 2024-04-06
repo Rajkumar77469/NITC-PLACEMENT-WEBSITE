@@ -23,5 +23,8 @@ router.post("/register", registerController);
 
  router.get("/student-details/:Email", getStudentDetailsByEmail);
  router.post("/appliedcompany",applycontroler);
- router.post("/save-to-excel",saveexcel)
+ router.post("/save-to-excel",saveexcel);
+//  router.post('/add-to-excel/:companyName', addToExcelController);
+// router.post('/create-excel-sheet', createExcelSheetController);
+// router.get('/excel-sheet/:companyName', getExcelSheet);
 module.exports = router;

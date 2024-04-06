@@ -25,5 +25,6 @@
  router.post("/get-company", getAllcompany);
  router.get("/company-names", getAllCompanyNames);
  router.get("/student-company",getStudentcompany)
+ 
  module.exports = router;
  

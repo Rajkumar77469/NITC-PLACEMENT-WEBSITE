@@ -12,6 +12,7 @@ const companySchema = new mongoose.Schema(
     },
     Description: {
       type: String,
+      required: [true, "Description is required"],
     },
     CTC: {
       type: Number,

@@ -23,7 +23,7 @@ app.use("/api/v1/users", require("./Routes/userRoute"));
 app.use("/api/v1/students", require("./Routes/studentroutes"));
 app.use("/api/v1/company",require("./Routes/companyroutes"));
 app.use("/api/v1/interviews",require("./Routes/interviewroutes"));
-// app.use("/api/v1/",require("./Routes/userhomeroutes"));
+// app.use("/api/v1/userhome",require("./Routes/userhomeroutes"));
 
 
 //port 
