@@ -219,13 +219,13 @@
 
 
 
-
+// UnorderedListOutlined,
 import React, { useState, useEffect } from "react";
 import { Form, Input, message, Modal, Select, Table, DatePicker } from "antd";
 import {
-  UnorderedListOutlined,
   EditOutlined,
   DeleteOutlined,
+  PlusOutlined ,
 } from "@ant-design/icons";
 import axios from "axios"; 
 import moment from "moment";
@@ -237,7 +237,6 @@ const Companyhome = () => {
       const [loading, setLoading] = useState(false);
     const [frequency, setFrequency] = useState("7");
     const [selectedDate, setSelectedate] = useState([]);
-    const [viewData, setViewData] = useState("table");
     const [editable, setEditable] = useState(null);
   
     //table data
@@ -297,10 +296,31 @@ const Companyhome = () => {
         dataIndex: "CTC",
         key: "ctc",
       },
+      
+      {
+        title: "Tenth",
+        dataIndex: "Tenth",
+        key: "Tenth",
+      },
+      {
+        title: "Twelth",
+        dataIndex: "Twelth",
+        key: "Twelth",
+      },
+      {
+        title: "Graduation",
+        dataIndex: "Graduation",
+        key: "Graduation",
+      },
+      {
+        title: "Cgpa",
+        dataIndex: "Cgpa",
+        key: "Cgpa",
+      },
       {
         title: "Description",
         dataIndex: "Description",
-        key: "description",
+        key: "Description",
       },
       {
         title: "Actions",
@@ -395,11 +415,11 @@ const Companyhome = () => {
   
     return (
       <>
-      <div>
-      <h6>COMPANY  RECORDS</h6>
+      <div style={{ textAlign: 'center' }}>
+      <h2 style={{ fontWeight: 'bold', color: 'blue' }}>COMPANY RECORDS</h2>
       </div>
       {loading}
-        <div className="filters">
+        <div className="filters" style={{ display: 'flex', justifyContent: 'space-between' }}>
           <div>
             <h6>Select Frequency</h6>
             <Select value={frequency} onChange={(values) => setFrequency(values)}>
@@ -415,20 +435,12 @@ const Companyhome = () => {
               />
             )}
           </div>
-          <div className="switch-icons">
-            <UnorderedListOutlined
-              className={`mx-2 ${
-                viewData === "table" ? "active-icon" : "inactive-icon"
-              }`}
-              onClick={() => setViewData("table")}
-            />
-          </div>
           <div>
             <button
-              className="btn btn-primary"
+              className="btn btn-primary Buttonstyle"
               onClick={() => setShowModal(true)}
             >
-              Add New
+            {<PlusOutlined />}   Add New
             </button>
           </div>
         </div>
@@ -455,7 +467,19 @@ const Companyhome = () => {
             <Form.Item label="CTC" name="CTC">
               <Input type="text" required />
             </Form.Item>
-            <Form.Item label="Description" name="description">
+            <Form.Item label="Tenth" name="Tenth">
+            <Input type="text" />
+          </Form.Item>
+          <Form.Item label="Twelth" name="Twelth">
+          <Input type="text" />
+        </Form.Item>
+        <Form.Item label="Graduation" name="Graduation">
+        <Input type="text"/>
+      </Form.Item>
+      <Form.Item label="Cgpa" name="Cgpa">
+      <Input type="text" required />
+    </Form.Item>
+            <Form.Item label="Description" name="Description">
               <Input type="text" />
             </Form.Item>
             <div className="d-flex justify-content-end">

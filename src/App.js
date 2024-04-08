@@ -10,6 +10,8 @@
                 import "./css/togglebutton.css";
                 import "./css/toolbar.css";
                 import "./css/UserHome.css"
+                import "./css/studentcompany.css"
+                import "./css/recruiters.css"
             import React from 'react';
             // import Navbar from './Components/Navbar';
             import Home from  "./Components/pages/Home.js";
@@ -21,6 +23,7 @@
             import Userhome from "./Components/UserHome.js";
             import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
             import Footer from "./Components/pages/Footer.js";
+            import PastRecruiters from "./Components/company/Recruiters.js"
             // import "./App.css";
             // <Navbar />
             function App() {
@@ -37,6 +40,7 @@
                       <Route path="/login" element={<Login />} />
                       <Route path="/userhome" element={<Userhome/>} />
                       <Route path="/adminhome" element={<Adminhome/>} />
+                      <Route path="/our-recruiters" element={<PastRecruiters/>} />
                     </Routes>
                   </Router>
                 </div>
