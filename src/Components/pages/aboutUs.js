@@ -4,11 +4,12 @@ import Navbar from "./Navbar";
 const About = () => {
   return (
     <div style={{ backgroundColor: "white" }}>
-      <Navbar />
+    <Navbar />
+    <h2 className="heading">WELCOME TO NITC PLACEMENT WEBSITE (Centre for Career Development)</h2>
+    <div className="fullabout">
+   
+    
       <br />
-      <br />
-      <h1 className="abt1">Welcome To National Institute of Technology Calicut</h1>
-      <h3 className="abt3">(Centre for Career Development)</h3>
       <div className="about-text-wrapper">
         <div className="abt-text">
           <h3>Vision</h3>
@@ -29,6 +30,7 @@ const About = () => {
           </p>
         </div>
       </div>
+    </div>
     </div>
   );
 };

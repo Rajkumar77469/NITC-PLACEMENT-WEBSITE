@@ -20,8 +20,7 @@ const contactUs = () => {
   return (
     <> 
     <Navbar/>
-    <br />
-    <br />
+    <h2 className="heading">WELCOME TO NITC PLACEMENT WEBSITE (Centre for Career Development)</h2>
       <div className="contact-outer" style={{ backgroundColor: "white" }}>
         <div className="placement-team">
           <h1 className="placement-team-heading">The Team</h1>

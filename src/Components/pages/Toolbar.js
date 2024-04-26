@@ -11,7 +11,6 @@ const Toolbar = props => (
     <div className="logo">  <img src={logo} alt="Logo" style={{left :'100%',height: '70px', width: '350px' }}  />
     </div>
   </Link>
-  
       <div className="spacer" />
       <div className="nav-elements">
         <ul>
@@ -20,35 +19,15 @@ const Toolbar = props => (
               About NITC
             </NavLink>
           </li>
-          <li className="dropdownmenu">
-            <button className="dropbtn">
-              <span>Statistics </span>
-              <i className="fa fa-caret-down" />
-            </button>
-            <div className="dropdown-content">
-            <NavLink to="/placement-stats-2022" exact="true" className="activeclass">
-                Placement Stats 2022
-              </NavLink>
-              <NavLink to="/placement-stats-2021" exact="true" className="activeclass">
-                Placement Stats 2021
-              </NavLink>
-              <NavLink to="/placement-stats-2020" exact="true" className="activeclass">
-                Placement Stats 2020
-              </NavLink>
-              <NavLink to="/placement-stats-2019" exact="true" className="activeclass">
-                Placement Stats 2019
-              </NavLink>
-            </div>
-          </li>
-          
+       
+          <li>
+          <NavLink to="/placement-stats" exact="true" className="activeclass">
+          Statistics
+          </NavLink>
+        </li>
           <li>
             <NavLink to="/our-recruiters" exact className="activeclass">
               Our Recruiters
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/procedure-and-policies" exact="true" className="activeclass">
-              Procedure
             </NavLink>
           </li>
           <li>
@@ -73,22 +52,3 @@ const Toolbar = props => (
 );
 
 export default Toolbar;          
-
-// <li className="dropdownmenu">
-// <button className="dropbtn">
-//   <span>Academics </span>
-//   <i className="fa fa-caret-down" />
-// </button>
-// <div className="dropdown-content">
-//   <NavLink to="/courses" exact="true" className="activeclass">
-//     Courses
-//   </NavLink>
- 
-// </div>
-// </li>
-
-// <li>
-// <NavLink to="/why-iiitl" exact="true" className="activeclass">
-//   Why Us
-// </NavLink>
-// </li>

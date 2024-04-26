@@ -8,6 +8,8 @@ import axios from "axios";
 import moment from "moment";
 import * as XLSX from "xlsx";
 import { saveAs } from "file-saver";
+import Layout from "../Layout/Layout";
+import BackButton from "../pages/BackButton";
 
 // const { RangePicker } = DatePicker;
 
@@ -17,8 +19,9 @@ const Interviewhome = () => {
   const [allstudent, setAllstudent] = useState([]);
   const [editable, setEditable] = useState(null);
   const [studentNames, setStudentNames] = useState([]);
+  const [studentEnrollment, setStudentEnrollment] = useState([]);
+  const [studentEmail, setStudentEmail] = useState([]);
   const [companyNames, setCompanyNames] = useState([]);
-
   const fetchStudentNames = async () => {
     try {
       const response = await axios.get('/students/student-names');
@@ -28,6 +31,32 @@ const Interviewhome = () => {
       console.error('Error fetching student names:', error);
     }
   };
+
+  /** fetch student enrolmment  and email */
+
+  const fetchStudentEnrollment = async () => {
+    try {
+      const response = await axios.get('/students/student-Enrollment');
+      const { studentEnrollment } = response.data;
+      setStudentEnrollment(studentEnrollment);
+    } catch (error) {
+      console.error('Error fetching student Enrollment:', error);
+    }
+  };
+
+  const fetchStudentEmail = async () => {
+    try {
+      const response = await axios.get('/students/student-Email');
+      const { studentEmail } = response.data;
+      setStudentEmail(studentEmail);
+    } catch (error) {
+      console.error('Error fetching student Email:', error);
+    }
+  };
+
+
+
+
 
   const fetchCompanyNames = async () => {
     try {
@@ -57,6 +86,8 @@ const Interviewhome = () => {
 
   useEffect(() => {
     fetchStudentNames();
+    fetchStudentEnrollment();
+    fetchStudentEmail();
     fetchCompanyNames();
     getAllStudentData();
   }, [getAllStudentData]);
@@ -141,6 +172,17 @@ const Interviewhome = () => {
       key: "CompanyName",
     },
     {
+      title: "ENROLLMENT",
+      dataIndex: "Enrollment",
+      key: "enrollment",
+    },
+    {
+      title: "EMAIL",
+      dataIndex: "Email",
+      key: "email",
+    },
+
+    {
       title: "Student Name",
       dataIndex: "StudentName",
       key: "StudentName",
@@ -188,14 +230,18 @@ const Interviewhome = () => {
   ];
 
   return (
-    <>
+    <div className="pagestyle">
+    <Layout >
+    <div className="back-button-container">
+      <BackButton />
+    </div>
     <div style={{ textAlign: 'center' }}>
     <h2 style={{ fontWeight: 'bold', color: 'blue' }}>INTERVIEW RECORDS</h2>
     </div>
-      {loading && <div>Loading...</div>}
+      {loading}
       <div className="filters" style={{ display: 'flex', justifyContent: 'space-between' }}>
       <div style={{ textAlign: 'right' }}>
-      <button type="primary" onClick={handleDownload} >
+      <button type="primary" style={{background:'#008000' ,color:'#fff'}} onClick={handleDownload} >
       {<DownloadOutlined />} Download 
       </button>
     </div>
@@ -211,7 +257,7 @@ const Interviewhome = () => {
   </div>
       </div>
       <div className="content">
-        <Table columns={columns} dataSource={allstudent} />
+        <Table className="tableinterviewcss" columns={columns} dataSource={allstudent} />
       </div>
       <Modal
         title={editable ? "Edit Transaction" : "Add student"}
@@ -227,6 +273,20 @@ const Interviewhome = () => {
           <Form.Item label="Company" name="CompanyName" rules={[{ required: true, message: 'Please select a company' }]}>
             <Select style={{ width: 475 }} placeholder="Select a company">
               {companyNames.map((name, index) => (
+                <Select.Option key={index} value={name}>{name}</Select.Option>
+              ))}
+            </Select>
+          </Form.Item>
+          <Form.Item label="Enrollment" name="Enrollment" rules={[{ required: true, message: 'Please select a student' }]}>
+            <Select style={{ width: 475 }} placeholder="Select a student">
+              {studentEnrollment.map((name, index) => (
+                <Select.Option key={index} value={name}>{name}</Select.Option>
+              ))}
+            </Select>
+          </Form.Item>
+         <Form.Item label="Email" name="Email" rules={[{ required: true, message: 'Please select a student' }]}>
+            <Select style={{ width: 475 }} placeholder="Select a student">
+              {studentEmail.map((name, index) => (
                 <Select.Option key={index} value={name}>{name}</Select.Option>
               ))}
             </Select>
@@ -257,12 +317,14 @@ const Interviewhome = () => {
           </Form.Item>
           <div className="d-flex justify-content-end">
             <Button type="primary" htmlType="submit">
-              SAVE
+              Add
             </Button>
           </div>
         </Form>
       </Modal>
-    </>
+    </Layout>
+    </div>
+    
   );
 };
 

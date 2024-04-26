@@ -1,0 +1,95 @@
+.back-button-container {
+    /* Set display to inline-block to size container to fit content */
+    display: inline-block;
+  }
+  
+  /* Style for the back button */
+  .BackButton {
+    /* Assuming BackButton is a class name */
+    /* Assuming BackButton is an inline SVG or similar */
+    /* Adjust styling as needed */
+    width: 20px; /* Set width */
+    height: 20px; /* Set height */
+    background-color: transparent; /* Set background color */
+    border: none; /* Remove border */
+    fill: black; /* Set arrow color */
+    /* Add more styling properties as needed */
+  }
+  
+  /* Hover effect for better user interaction */
+  .BackButton:hover {
+    opacity: 0.7; /* Reduce opacity on hover */
+  }
+  
+  .backicon {
+    /* Styles for the icon */
+    /* Example styles */
+    width: 20px;
+    height: 20px;
+    fill:red; /* Assuming the SVG uses fill for coloring */
+  }
+
+  /* styles.css */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #008000;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #006400;
+}
+
+.main-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Style for the side image */
+.main-side-image {
+  width: 50%; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Style for the buttons container */
+.adminpagebutton {
+  display: flex;
+  flex-direction: column;
+ 
+}
+
+/* Style for the buttons */
+.adminpagebutton button {
+  margin-bottom: 10px; /* Adjust spacing between buttons */
+  padding: 10px 20px;
+  border: none;
+  background-color:#000065; /* Set default button background color */
+  color: #333; /* Set default button text color */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color:#fff;
+  margin-left: 140px;
+}
+
+/* Style for hover effect */
+.adminpagebutton button:hover {
+  background-color: #3CB371; /* Change background color on hover */
+  color: #fff; /* Change text color on hover */
+}
+

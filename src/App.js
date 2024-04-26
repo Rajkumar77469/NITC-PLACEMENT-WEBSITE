@@ -12,6 +12,8 @@
                 import "./css/UserHome.css"
                 import "./css/studentcompany.css"
                 import "./css/recruiters.css"
+                import "./css/Mainpage.css"
+                import "./css/statics.css"
             import React from 'react';
             // import Navbar from './Components/Navbar';
             import Home from  "./Components/pages/Home.js";
@@ -24,6 +26,9 @@
             import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
             import Footer from "./Components/pages/Footer.js";
             import PastRecruiters from "./Components/company/Recruiters.js"
+            import Mainpage from "./Components/Mainpage/Mainpage.js";
+            import Placement from "./Components/pages/placementstatics/PlacementTOTAL.js"
+           
             // import "./App.css";
             // <Navbar />
             function App() {
@@ -40,7 +45,9 @@
                       <Route path="/login" element={<Login />} />
                       <Route path="/userhome" element={<Userhome/>} />
                       <Route path="/adminhome" element={<Adminhome/>} />
-                      <Route path="/our-recruiters" element={<PastRecruiters/>} />
+                      <Route path="/our-recruiters" element={<PastRecruiters/>} />\
+                      <Route path="/mainpage" element={<Mainpage/>} />
+                      <Route path="/placement-stats" element={<Placement/>} />
                     </Routes>
                   </Router>
                 </div>

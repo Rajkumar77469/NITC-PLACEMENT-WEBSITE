@@ -31,6 +31,7 @@ const containerStyles = {
 const Home = () => (
   <>
     <Navbar />
+    <h4 className="heading">WELCOME TO NITC PLACEMENT WEBSITE (Centre for Career Development)</h4>
     <div className="homepic">
       {/* Your content goes here */}
       <Footer />

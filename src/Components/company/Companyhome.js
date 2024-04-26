@@ -227,8 +227,10 @@ import {
   DeleteOutlined,
   PlusOutlined ,
 } from "@ant-design/icons";
+import BackButton from "../pages/BackButton";
 import axios from "axios"; 
 import moment from "moment";
+import Layout from "../Layout/Layout";
 const { RangePicker } = DatePicker;
 
 const Companyhome = () => {
@@ -414,10 +416,14 @@ const Companyhome = () => {
     };
   
     return (
-      <>
-      <div style={{ textAlign: 'center' }}>
-      <h2 style={{ fontWeight: 'bold', color: 'blue' }}>COMPANY RECORDS</h2>
-      </div>
+      <div className="pagestyle">
+      <Layout>
+      <div className="back-button-container">
+      <BackButton />
+    </div>
+      <h2 className="heading">COMPANY RECORDS</h2>
+    
+    
       {loading}
         <div className="filters" style={{ display: 'flex', justifyContent: 'space-between' }}>
           <div>
@@ -445,7 +451,7 @@ const Companyhome = () => {
           </div>
         </div>
         <div className="content">
-            <Table columns={columns} dataSource={allcompany} />
+            <Table className="tablecompanycss" columns={columns} dataSource={allcompany} />
         </div>
         <Modal
           title={editable ? "Edit company" : "Add company"}
@@ -490,7 +496,8 @@ const Companyhome = () => {
             </div>
           </Form>
         </Modal>
-      </>
+      </Layout>
+      </div>
     );
 };
 

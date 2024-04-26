@@ -135,7 +135,7 @@ const PastRecruiters = ()  => {
   return (
     <>
     <Navbar/>
-  
+    <h2 className="heading">WELCOME TO NITC PLACEMENT WEBSITE (Centre for Career Development)</h2>
     <div className="prouter-container">
       <h1 className="pr-main-heading">Our Recruiters</h1>
         <div className="prinner-wrapper">
