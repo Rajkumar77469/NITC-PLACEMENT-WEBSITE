@@ -2,13 +2,17 @@
     text-align: center;
     gap: 5px; 
     background-image: linear-gradient(to right, #9679f7, #86fbf5, #9679f7);
-    border:6px solid red;
+    justify-content: center;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
   }
   
   
   .App-logo {
     height: 40vmin;
     pointer-events: none;
+    align-items: center;
+    justify-content: center;
   }
   
   @media (prefers-reduced-motion: no-preference) {
@@ -25,6 +29,7 @@
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
+    align-items: center;
 
   }
   
@@ -41,3 +46,28 @@
     }
   }
   
+  .chart-container {
+    display: flex;
+    flex:80;
+    justify-content: center;
+  }
+  
+  .chart {
+    max-width: 100%; 
+  }
+  
+  .chart-container-alg{
+    display: flex;
+    flex:80;
+    justify-content: center;
+    margin-left: 300px;
+    
+  }
+
+  .chart-container-algsay{
+    display: flex;
+    flex:80;
+    justify-content: center;
+    margin-left: 360px;
+  }
+   

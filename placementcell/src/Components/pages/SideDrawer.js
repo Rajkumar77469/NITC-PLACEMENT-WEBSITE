@@ -2,14 +2,7 @@ import React from "react";
 import { NavLink, Link } from "react-router-dom";
 class SideDrawer extends React.Component {
   state = {
-    showDropDownAcademics: false,
     showDropdownStatistics: false
-  };
-  handleDropDownAcademics = () => {
-    this.setState(cs => ({
-      showDropDownAcademics: !cs.showDropDownAcademics,
-      showDropdownStatistics: false
-    }));
   };
   render() {
     let drawerClass = "side-drawer";
@@ -32,40 +25,11 @@ class SideDrawer extends React.Component {
               About Us
             </NavLink>
           </li>
-          <li className="activeclass" onClick={this.handleDropDownAcademics}>
-            Academics <i className="fa fa-caret-down" />
-          </li>
-          {this.state.showDropDownAcademics ? (
-            <ul className="drp-down">
-              <li
-                onClick={() => this.props.click(this.handleDropDownAcademics)}
-                className="activeclass"
-              >
-                <NavLink to="/courses" exact="true" className="activeclass">
-                  Courses
-                </NavLink>
-              </li>
-              <li
-                onClick={() => this.props.click(this.handleDropDownAcademics)}
-                className="activeclass"
-              >
-                <NavLink to="/demographics" exact="true"className="activeclass">
-                  Demographics
-                </NavLink>
-              </li>
-            </ul>
-          ) : null}
-
-          <li onClick={this.props.click}>
+       <li onClick={this.props.click}>
           <NavLink to="/placement-stats" exact="true" className="activeclass">
           Statistics
           </NavLink>
         </li>
-          <li onClick={this.props.click}>
-            <NavLink to="/procedure-and-policies" exact="true" className="activeclass">
-              Procedure
-            </NavLink>
-          </li>
           <li onClick={this.props.click}>
             <NavLink to="/contact-us" exact="true" className="activeclass">
               Contact Us

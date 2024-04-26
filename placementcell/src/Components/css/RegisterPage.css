@@ -1,17 +1,11 @@
-.register-page {
+/* .register-page {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   background-image: linear-gradient(to right, #9679f7, #86fbf5, #9679f7);
- 
 }
 .register-form {
-  /* background-color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  padding: 20px;
-  width: 30%;
-  z-index: 1; */
   margin-left: 70px; 
   margin-bottom: 200px;
   padding: 20px;
@@ -49,4 +43,76 @@
 .register-form button:hover {
   background-color: black;
   color: white;
+}
+.imgeresize{
+height: 50%;
+border:4ps solid red;
+width: 50%;
+} */
+.register-page {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(to right, #f78c79cc, #86fbf1, #788089af);
+
+}
+
+.register-container {
+  display: flex;
+  align-items: center;
+}
+
+.register-form {
+  margin-left: 30px;
+  margin-bottom: 130px;
+  padding: 80px;
+  width: 70vh;
+  height: 75vh;
+}
+
+.register-form h2 {
+  text-align: center;
+  font-weight: bold;
+  color: #344265;
+}
+
+.register-form a {
+  color: #344265 !important;
+}
+
+.register-form a:hover {
+  color: black !important;
+}
+
+.register-form button {
+  background-color: #344265;
+  color: white;
+}
+
+.register-form input:focus {
+  border: 1px solid #344265 !important;
+  color: #344265;
+}
+
+.register-form button:hover {
+  background-color: black;
+  color: white;
+}
+
+.register-side-image {
+  height: 50vh; /* Make the image take up full height of its parent container */
+  width: auto; /* Ensure image width adjusts accordingly */
+  max-width: 130vh; 
+  margin-bottom: 130px;
+    
+    
+}
+
+
+
+.heading {
+  font-weight: bold;
+  color: blue;
+  text-align: center;
 }

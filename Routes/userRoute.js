@@ -5,6 +5,7 @@ const {
 } = require("../Controler/userController");
 const {getStudentDetailsByEmail,getAllinterviewByEmail}=require("../Controler/userStudentController");
 const {applycontroler,saveexcel}=require("../Controler/applycontroller");
+
 //router object=
 const router = express.Router();
 
@@ -25,6 +26,7 @@ router.post("/register", registerController);
  router.get("/student-interview-details/:Email", getAllinterviewByEmail);
  router.post("/appliedcompany",applycontroler);
  router.post("/save-to-excel",saveexcel);
+
 //  router.post('/add-to-excel/:companyName', addToExcelController);
 // router.post('/create-excel-sheet', createExcelSheetController);
 // router.get('/excel-sheet/:companyName', getExcelSheet);

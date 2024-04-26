@@ -3,6 +3,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const colors = require("colors");
 const path = require("path");
+const bodyParser = require('body-parser');
 const connectDb = require("./Config/connectDb");
 // config dot env file
 dotenv.config();
@@ -12,7 +13,7 @@ connectDb();
 
 //rest object
 const app = express();
-
+app.use(bodyParser.json());
 //middlewares
 app.use(express.json());
 app.use(cors());

@@ -75,5 +75,44 @@ border: 2px solid white;
 }
 
 /* //baad ki css -------------------------------------------------------------------------------------------------------*/
+/* Add styles for the main container */
+.main-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Style for the side image */
+.main-side-image {
+  width: 50%; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Style for the buttons container */
+.adminpagebutton {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Style for the buttons */
+.adminpagebutton button {
+  margin-bottom: 10px; /* Adjust spacing between buttons */
+  padding: 10px 20px;
+  border: none;
+  background-color: #fff; /* Set default button background color */
+  color: #333; /* Set default button text color */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 140px;
+}
+
+/* Style for hover effect */
+.adminpagebutton button:hover {
+  background-color: #3CB371; /* Change background color on hover */
+  color: #fff; /* Change text color on hover */
+}
 
 
+.placementstatus{
+  border:5px solid red !important;
+  background-color: red;
+}

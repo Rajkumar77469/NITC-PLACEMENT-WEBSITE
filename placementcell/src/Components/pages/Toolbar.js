@@ -11,39 +11,33 @@ const Toolbar = props => (
     <div className="logo">  <img src={logo} alt="Logo" style={{left :'100%',height: '70px', width: '350px' }}  />
     </div>
   </Link>
-  
       <div className="spacer" />
       <div className="nav-elements">
         <ul>
           <li>
             <NavLink to="/about-us" exact="true" className="activeclass">
-              About NITC
+              ABOUT NITC
             </NavLink>
           </li>
        
           <li>
           <NavLink to="/placement-stats" exact="true" className="activeclass">
-          Statistics
+          STATISTICS
           </NavLink>
         </li>
           <li>
             <NavLink to="/our-recruiters" exact className="activeclass">
-              Our Recruiters
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/procedure-and-policies" exact="true" className="activeclass">
-              Procedure
+              OUR RECRUITERS
             </NavLink>
           </li>
           <li>
             <NavLink to="/contact-us" exact="true" className="activeclass">
-              Contact Us
+              CONTACT US
             </NavLink>
           </li>
           <li>
           <NavLink to="/register" exact="true" className="activeclass">
-            Register
+            REGISTER
           </NavLink>
         </li>
         </ul>
@@ -58,22 +52,3 @@ const Toolbar = props => (
 );
 
 export default Toolbar;          
-
-// <li className="dropdownmenu">
-// <button className="dropbtn">
-//   <span>Academics </span>
-//   <i className="fa fa-caret-down" />
-// </button>
-// <div className="dropdown-content">
-//   <NavLink to="/courses" exact="true" className="activeclass">
-//     Courses
-//   </NavLink>
- 
-// </div>
-// </li>
-
-// <li>
-// <NavLink to="/why-iiitl" exact="true" className="activeclass">
-//   Why Us
-// </NavLink>
-// </li>

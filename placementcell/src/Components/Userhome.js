@@ -105,6 +105,7 @@ useEffect(() => {
   return (
     <div className="user-home">
       <Layout />
+      <h2 className="heading">WELCOME TO NITC PLACEMENT WEBSITE (Centre for Career Development)</h2>
       <div className="interviewnotify">
       {studentinterviewDetails && (
         <div>
@@ -126,6 +127,7 @@ useEffect(() => {
           {studentDetails ? (
             <>
               <div className="details">
+              <p><span className='label'>STATUS:</span>{studentDetails.Status.toUpperCase()}</p>
                 <p><span className="label">Name:</span> {studentDetails.Name}</p>
                 <p><span className="label">Enrollment:</span> {studentDetails.Enrollment}</p>
                 <p><span className="label">Email:</span> {studentDetails.Email}</p>
@@ -136,9 +138,6 @@ useEffect(() => {
                 <p><span className="label">Tenth:</span> {studentDetails.Tenth}</p>
                 <p><span className="label">Twelfth:</span> {studentDetails.Twelth}</p>
                 <p><span className="label">Cgpa:</span> {studentDetails.Cgpa}</p>
-              </div>
-              <div className='status'>
-                <p><span className='label'>STATUS:</span> {studentDetails.Status.toUpperCase()}</p>
               </div>
             </>
           ) : (
