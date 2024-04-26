@@ -5,7 +5,7 @@ const {
   editstudent,
   deletestudent,
 } = require("../Controler/studentcontroler");
-const { getAllStudentNames }=require("../Controler/getallstudentscontroler")
+const { getAllStudentNames,getAllEnrollment,getAllEmail }=require("../Controler/getallstudentscontroler")
 //router object
 const router = express.Router();
 
@@ -20,5 +20,7 @@ router.post("/delete-student", deletestudent);
 //get transections
 router.post("/get-student", getAllstudent);
 router.get("/student-names", getAllStudentNames);
+router.get("/student-Enrollment", getAllEnrollment);
+router.get("/student-Email", getAllEmail);
 
 module.exports = router;

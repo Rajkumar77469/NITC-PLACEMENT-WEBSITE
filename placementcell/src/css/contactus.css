@@ -5,6 +5,7 @@
     text-align: left;
     flex-wrap: wrap;
     margin-top: 15px;
+   
   }
   .contact-box {
     background-color: rgb(241, 241, 241);
@@ -151,3 +152,4 @@
     width: 100%;
     display: flex;
   }
+  

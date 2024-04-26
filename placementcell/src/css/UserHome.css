@@ -49,6 +49,30 @@ border: 2px solid white;
   }
 
 }
+.icon {
+  /* Styles for the icon */
+  /* Example styles */
+  width: 20px;
+  height: 20px;
+  fill:red; /* Assuming the SVG uses fill for coloring */
+}
+
+
+.tableinterviewcss{
+  width: 100%;
+}
+.tablecompanycss{
+  width: 100%;
+}
+.interviewnotify {
+  color: #000066 !important;
+  background-color: #ff4444; /* Red background color */
+  padding: 10px 10px; /* Padding to give space around the text */
+ /* Rounded corners */
+}
+.notregisterdnotice{
+  color:red;
+}
 
 /* //baad ki css -------------------------------------------------------------------------------------------------------*/
 

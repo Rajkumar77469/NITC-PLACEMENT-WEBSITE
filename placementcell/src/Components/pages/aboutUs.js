@@ -4,6 +4,7 @@ import Navbar from "./Navbar";
 const About = () => {
   return (
     <div style={{ backgroundColor: "white" }}>
+    <div className="fullabout">
       <Navbar />
       <br />
       <br />
@@ -29,6 +30,7 @@ const About = () => {
           </p>
         </div>
       </div>
+    </div>
     </div>
   );
 };

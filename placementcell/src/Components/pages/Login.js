@@ -26,7 +26,7 @@ const Login = () => {
 
       // Check if user isAdmin
       if (user && user.isAdmin === true) {
-        navigate("/adminhome");
+        navigate("/mainpage");
       } else {
         navigate("/userhome");
       }

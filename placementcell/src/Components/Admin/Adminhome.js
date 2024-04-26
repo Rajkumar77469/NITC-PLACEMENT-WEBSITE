@@ -5,10 +5,9 @@ import axios from "axios";
 import Spinner from "../pages/Spinner.js";
 import moment from "moment";
 import Layout from "../Layout/Layout.js";
-import COMPANYCOMPONENT from "../company/Companyhome.js";
-import INTERVIEWROUTE from "../interview/interviewhome.js";
 import * as XLSX from "xlsx";
 import { saveAs } from "file-saver";
+import BackButton from "../pages/BackButton.js";
 
 
 
@@ -257,7 +256,9 @@ const Adminhome = () => {
   return (
     <div className="pagestyle">
     <Layout>
-    
+    <div className="back-button-container">
+    <BackButton />
+  </div>
     <div style={{ textAlign: 'center' }}>
     <h2 style={{ fontWeight: 'bold', color: 'blue' }}>STUDENTS RECORDS</h2>
     </div>
@@ -306,8 +307,8 @@ const Adminhome = () => {
           />
         </div>
         <div>
-      <button type="primary apnibutton" onClick={handleDownload} >
-      {<DownloadOutlined />}  Download 
+      <button type="primary apnibutton" style={{background:'#008000' ,color:'#fff'}} onClick={handleDownload} >
+      {<DownloadOutlined />}   Download 
       </button>
     </div>
         <div>
@@ -444,10 +445,6 @@ const Adminhome = () => {
           </div>
         </Form>
       </Modal>
-
-
-      <COMPANYCOMPONENT />
-    <INTERVIEWROUTE />
     </Layout>
     </div>
   );

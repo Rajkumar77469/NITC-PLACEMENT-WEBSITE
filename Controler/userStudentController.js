@@ -45,8 +45,8 @@
 
 
 const Student = require("../Model/studentmodel");
-
-const getStudentDetailsByEmail = async (req, res) => {
+const Interview = require("../Model/interviewmodel");
+exports.getStudentDetailsByEmail = async (req, res) => {
   try {
     const email = req.params.Email.toLowerCase(); // Convert email to lowercase
     const student = await Student.findOne({ Email: email });
@@ -62,7 +62,24 @@ const getStudentDetailsByEmail = async (req, res) => {
   }
 };
 
-module.exports = {
-  getStudentDetailsByEmail
+
+
+
+
+
+exports.getAllinterviewByEmail = async (req, res) => {
+  try {
+    const email = req.params.Email.toLowerCase(); // Convert email to lowercase
+    const Interviews = await Interview.findOne({ Email: email });
+
+    if (!Interviews) {
+      return res.status(404).json({ error: 'Interview not found' });
+    }
+
+    res.status(200).json({ Interviews });
+  } catch (error) {
+    console.error('Error fetching Interview details:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
 };
 

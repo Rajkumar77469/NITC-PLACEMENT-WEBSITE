@@ -20,27 +20,12 @@ const Toolbar = props => (
               About NITC
             </NavLink>
           </li>
-          <li className="dropdownmenu">
-            <button className="dropbtn">
-              <span>Statistics </span>
-              <i className="fa fa-caret-down" />
-            </button>
-            <div className="dropdown-content">
-            <NavLink to="/placement-stats-2022" exact="true" className="activeclass">
-                Placement Stats 2022
-              </NavLink>
-              <NavLink to="/placement-stats-2021" exact="true" className="activeclass">
-                Placement Stats 2021
-              </NavLink>
-              <NavLink to="/placement-stats-2020" exact="true" className="activeclass">
-                Placement Stats 2020
-              </NavLink>
-              <NavLink to="/placement-stats-2019" exact="true" className="activeclass">
-                Placement Stats 2019
-              </NavLink>
-            </div>
-          </li>
-          
+       
+          <li>
+          <NavLink to="/placement-stats" exact="true" className="activeclass">
+          Statistics
+          </NavLink>
+        </li>
           <li>
             <NavLink to="/our-recruiters" exact className="activeclass">
               Our Recruiters

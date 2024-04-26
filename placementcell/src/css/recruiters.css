@@ -3,7 +3,9 @@
     display: flex;
     justify-content: center;
   }
-  
+  .prouter-container{
+    background-image: linear-gradient(to right, #9679f7, #86fbf5, #9679f7);
+  }
   .pr-wrapper {
     display: flex;
     justify-content: center;

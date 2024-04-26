@@ -3,7 +3,7 @@ const {
   loginController,
   registerController,
 } = require("../Controler/userController");
-const {getStudentDetailsByEmail}=require("../Controler/userStudentController");
+const {getStudentDetailsByEmail,getAllinterviewByEmail}=require("../Controler/userStudentController");
 const {applycontroler,saveexcel}=require("../Controler/applycontroller");
 //router object=
 const router = express.Router();
@@ -22,6 +22,7 @@ router.post("/register", registerController);
 //   .post(validate(signupSchema), registerController);
 
  router.get("/student-details/:Email", getStudentDetailsByEmail);
+ router.get("/student-interview-details/:Email", getAllinterviewByEmail);
  router.post("/appliedcompany",applycontroler);
  router.post("/save-to-excel",saveexcel);
 //  router.post('/add-to-excel/:companyName', addToExcelController);
