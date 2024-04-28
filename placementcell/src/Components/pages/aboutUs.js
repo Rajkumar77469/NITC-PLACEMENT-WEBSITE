@@ -7,27 +7,19 @@ const About = () => {
     <Navbar />
     <h2 className="heading">WELCOME TO NITC PLACEMENT WEBSITE (Centre for Career Development)</h2>
     <div className="fullabout">
-   
-    
-      <br />
       <div className="about-text-wrapper">
         <div className="abt-text">
+        <p className="aboutnitc">The Centre for Career Development (CCD) at NIT Calicut is dedicated to providing comprehensive career guidance, training, and placement support to students. Our mission is to empower students with the skills, knowledge and opportunities necessary to succeed in their chosen careers. We offer personalized counselling, industry connections and a range of workshops and training programmes to enhance employability skills. Our goal is to bridge the gap between academia and industry, ensuring students have access to internships, industrial training, and placement opportunities. At CCD, we are committed to nurturing well-rounded professionals who are equipped for the challenges of the ever-evolving job market.</p>
+        <br />
           <h3>Vision</h3>
-          <p><strong>Inculcate a career-oriented campus culture that molds the undergraduate, postgraduate, and doctoral research students of the Institute to pursue their academic and professional goals.</strong></p>
+          <p><strong>Inculcate a career-oriented campus culture that moulds the undergraduate, postgraduate and doctoral research students of the Institute to pursue their academic and professional goals</strong></p>
           <h3>Mission</h3>
           <p>
             <strong>
-              Liaison with talent acquisition teams of industries, consultant firms, and research organizations for placement and internship opportunities.
-              Collaborate with alumni to facilitate exploration of career options for students.
-              Enhance the skill sets of students through training programs so as to make them career-ready.
+            Liaison with talent acquisition teams of industries, consultant firms and research organisations for placement and internship opportunities. Collaborate with alumni to facilitate exploration of career options for students. Enhance the skill set of students through training programmes so as to make them career-ready.
             </strong>
           </p>
-          <p>
-            National Institute of Technology Calicut (NITC) is one of the premier technical institutes in the country (NIRF 2021 Rank: Engineering stream - 25, Architecture stream - 03; ARIIA Rank: 09). The motto of NIT Calicut is “International standing of the highest calibre”. Our mission is to develop high-quality technical education and personnel with a sound footing on basic engineering principles, technical and managerial skills, innovative research capabilities, and exemplary professional conduct to lead and to use technology for the progress of mankind, adapting themselves to changing technological environments with the highest ethical values as the inner strength.
-          </p>
-          <p>
-            The Centre for Career Development was formed in 1988, with an aim to interact with the corporate for possible employment to the students graduating from the Institute. The Centre for Career Development also explores the possibilities for summer training and internships for the students of the Institute. National Institute of Technology Calicut has maintained a good placement record over the years. The graduates and postgraduates of NITC have been selected by some of the world’s leading business corporations. The highly dedicated faculty, coupled with world-class infrastructure facilities, prepares the meritorious students to take up the challenges of the rapidly growing globalized techno-economic scenario in the country.
-          </p>
+        
         </div>
       </div>
     </div>

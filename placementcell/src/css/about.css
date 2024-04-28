@@ -1,7 +1,9 @@
 
   /* About Component*/
   .fullabout{
-    background-image: linear-gradient(to right, #9679f7, #86fbf5, #9679f7);
+    background-image: linear-gradient(to right, #9679f7, white, #79f7ed93);
+    margin-bottom:60px;
+ 
   }
   .abt1,
   .abt3 {
@@ -161,5 +163,11 @@
     margin-left: 15px;
   }
   .all{
-    background-image: linear-gradient(to right, #9679f7, #86fbf5, #9679f7);
+    background-image: linear-gradient(to right, black, black, black) !important;
+  }
+  .aboutnitc{
+    font-weight: bold;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size:x-large !important;
   }

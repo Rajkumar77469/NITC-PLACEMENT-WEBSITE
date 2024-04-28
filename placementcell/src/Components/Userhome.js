@@ -21,9 +21,10 @@ const UserHome = () => {
           company.Tenth <= studentDetails.Tenth &&
           company.Twelth <= studentDetails.Twelth &&
           company.Graduation <= studentDetails.Graduation &&
-          company.Cgpa <= studentDetails.Cgpa
+          company.Cgpa <= studentDetails.Cgpa 
         );
       });
+     // &&  studentDetails.Status.equals("Placed")
       setEligibleCompanies(filteredCompanies);
     } catch (error) {
       console.error('Error fetching company details:', error);
@@ -103,7 +104,7 @@ useEffect(() => {
   };
 
   return (
-    <div className="user-home">
+    <div className="userhomepagecss">
       <Layout />
       <h2 className="heading">WELCOME TO NITC PLACEMENT WEBSITE (Centre for Career Development)</h2>
       <div className="interviewnotify">

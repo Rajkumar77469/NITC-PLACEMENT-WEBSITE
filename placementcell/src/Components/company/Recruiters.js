@@ -30,12 +30,12 @@ import vehanttechnologiesLogo from "./companyimage/vehanttechnologies.png";
 import wickedrideLogo from "./companyimage/wickedride.png";
 import zenefitsLogo from "./companyimage/zenefits.jpeg";
 import kleanLogo from "./companyimage/klean.png";
-import googleLogo from "./companyimage/googlei.png";
+
 import polestarLogo from "./companyimage/polestar.jpeg";
 import wiproLogo from "./companyimage/wipro.jpeg";
-import Microsoft from "./companyimage/Microsoft.png";
+
 import ShipsyLogo from "./companyimage/shipsy.png";
-import flipkartLogo from "./companyimage/flipkart.jpeg";
+
 import mindtickleLogo from "./companyimage/mindtickle.png";
 import sabreLogo from "./companyimage/sabre.png";
 import xebiaLogo from "./companyimage/xebia.png";
@@ -50,7 +50,6 @@ import juspayLogo from "./companyimage/juspay.png";
 import whitepandaLogo from "./companyimage/whitepanda.png";
 import virtusaLogo from "./companyimage/virtusa.png";
 import goibiboLogo from "./companyimage/goibibo.png";
-import amazonLogo from "./companyimage/amazon.png";
 import tekionLogo from "./companyimage/tekion.png";
 import gradeupLogo from "./companyimage/gradeup-logo.png";
 import ucLogo from "./companyimage/uc.jpg";
@@ -107,7 +106,6 @@ import techcurator from "./companyimage/techcurator.jpg"
 import techolution from "./companyimage/techolution.png"
 import tejas from "./companyimage/tejas.jpg"
 import trifacta from "./companyimage/trifacta.png"
-import undostres from "./companyimage/undostres.jpg"
 import walmartglobaltech from "./companyimage/walmartglobaltech.jpeg"
 import mthree from "./companyimage/mthree.webp"
 import zsassociates from "./companyimage/zsassociates.png"
@@ -136,49 +134,38 @@ const PastRecruiters = ()  => {
     <>
     <Navbar/>
     <h2 className="heading">WELCOME TO NITC PLACEMENT WEBSITE (Centre for Career Development)</h2>
-    <div className="prouter-container">
+    <div className="mainrecruiters-container">
       <h1 className="pr-main-heading">Our Recruiters</h1>
-        <div className="prinner-wrapper">
-          <div className="prinner-box">
-            <div className="prinner-row">
-              <img src={amazonLogo} alt="Amazon" />
-              <img src={flipkartLogo} alt="Flipkart" />
-              <img src={ecorp} alt="314ecorp" />
-              <img src={ackoLogo} alt="Acko" />
-              <img src={intelLogo} alt="Intel" />
-            </div>
+        <div className="recruiters-wrapper">
+          <div className="recruiters-box">
 
-            <div className="prinner-row">
-            <img src={Amdocs} alt="Amdocs" />
-            <img src={Dell} alt="Dell" />
-            <img src={Adobe} alt="Adobe" />
-            <img src={Citi} alt="Citi" />
-            <img src={Genpact} alt="Genpact" />
-            <img src={americanExpressLogo} alt="American Express" />
-            <img src={amd} alt="AMD" />
-            <img src={bigbasket} alt="BigBasket" />
-            <img src={byjus} alt="Byjus" />
-            <img src={capdgeminiLogo} alt="Capgemini" /> 
-          </div>
+          <div className="recruiters-row">
+          <img src={Amdocs} alt="Amdocs" />
+          <img src={Dell} alt="Dell" />
+          <img src={Adobe} alt="Adobe" />
+          <img src={Citi} alt="Citi" />
+          <img src={Genpact} alt="Genpact" />
+          <img src={americanExpressLogo} alt="American Express" />
+          <img src={amd} alt="AMD" />
+          <img src={bigbasket} alt="BigBasket" />
+          
+        </div>
 
-           
-            <div className="prinner-row">
-            <img src={Sap} alt="Sap" />
-            <img src={Aryaka} alt="Aryaka" />
-            <img src={Zeiss} alt="Zeiss" />
-            <img src={Siemns} alt="Siemnsus" />
-            <img src={radisys} alt="radisys" />
-            <img src={codenationLogo} alt="Codenation" />
-            <img src={cognitio} alt="cognitio" />
-            <img src={cognizant} alt="Cognizant" />
-            <img src={cogoport} alt="Cogoport" />
-            <img src={accenture} alt="Accenture" />
-          </div>
 
-            
-       
+        <div className="recruiters-row">
+        <img src={Sap} alt="Sap" />
+        <img src={Aryaka} alt="Aryaka" />
+        <img src={Zeiss} alt="Zeiss" />
+        <img src={Siemns} alt="Siemnsus" />
+        <img src={radisys} alt="radisys" />
+        <img src={codenationLogo} alt="Codenation" />
+        <img src={cognitio} alt="cognitio" />
+        <img src={cognizant} alt="Cognizant" />
+     
+      </div>
 
-            <div className="prinner-row">
+        
+      <div className="recruiters-row">
               <img src={albatronix} alt="Albatronix" />
               <img src={cred} alt="Cred" />
               <img src={darwinbox} alt="DarwinBox" />
@@ -187,12 +174,11 @@ const PastRecruiters = ()  => {
               <img src={fis} alt="FIS" />
               <img src={gameskraftLogo} alt="Gameskraft" />
               <img src={ganit} alt="Ganit" />
-              <img src={gupshup} alt="Gupshup" />
-              <img src={increff} alt="Increff" />
+             
             </div>
 
 
-            <div className="prinner-row">
+            <div className="recruiters-row">
               <img src={indiamart} alt="Indiamart" />
               <img src={infoedgeLogo} alt="Infoedge" />
               <img src={infosys} alt="Infosys" />
@@ -201,13 +187,12 @@ const PastRecruiters = ()  => {
               <img src={ixigo} alt="Ixigo" />
               <img src={jioLogo} alt="Jio" />
               <img src={joshtechnologyLogo} alt="Josh Technology Group" />
-              <img src={larsentoubro} alt="Larsen Tourbo" />
-              <img src={maqsoftwareLogo} alt="MAQ Software" />
+            
             </div>
 
-         
 
-            <div className="prinner-row">
+            
+            <div className="recruiters-row">
               <img src={mathworks} alt="Mathworks" />
               <img src={dotnetLogo} alt="Dotnet" />
               <img src={mindtickleLogo} alt="Mind Tickle" />
@@ -216,13 +201,12 @@ const PastRecruiters = ()  => {
               <img src={neosoft} alt="Neosoft" />
               <img src={netmeds} alt="Netmeds" />
               <img src={nferenceLogo} alt="Nference" />
-              <img src={sportsapp} alt="sportsapp" />
-              <img src={nucleusLogo} alt="Nucleus" />
+            
             </div>
 
            
 
-            <div className="prinner-row">
+            <div className="recruiters-row">
               <img src={nutanixLogo} alt="Nutanix" />
               <img src={nvidia} alt="nvidia" />
               <img src={onineLogo} alt="o9 solutions" />
@@ -231,157 +215,175 @@ const PastRecruiters = ()  => {
               <img src={sabreLogo} alt="Sabre" />
               <img src={samsungLogo} alt="Samsung" />
               <img src={samsungsds} alt="Samsung sds" />
-              <img src={sawolabds} alt="Sawo Labs" />
-              <img src={servicenow} alt="Service Now" />
+            
             </div>
 
-            <div className="prinner-row">
-              <img src={ShipsyLogo} alt="shipsy" />
-              <img src={sourcewiz} alt="SourceWiz" />
-              <img src={tcsLogo} alt="TATA Consultancy Services" />
-              <img src={techcurator} alt="Tech Curator" />
-              <img src={techolution} alt="Techolution" />
-              <img src={tejas} alt="tejas" />
-              <img src={tekionLogo} alt="Tekion Corp" />
-              <img src={trifacta} alt="Trifacta" />
-              <img src={undostres} alt="Undostres" />
+            <div className="recruiters-row">
+            <img src={ShipsyLogo} alt="shipsy" />
+            <img src={sourcewiz} alt="SourceWiz" />
+            <img src={tcsLogo} alt="TATA Consultancy Services" />
+            <img src={techcurator} alt="Tech Curator" />
+            <img src={techolution} alt="Techolution" />
+            <img src={tejas} alt="tejas" />
+            <img src={tekionLogo} alt="Tekion Corp" />
+            <img src={trifacta} alt="Trifacta" />
+           
+          </div>
+
+
+            <div className="recruiters-row">
+              <img src={ecorp} alt="314ecorp" />
+              <img src={ackoLogo} alt="Acko" />
+              <img src={intelLogo} alt="Intel" />
+              <img src={cogoport} alt="Cogoport" />
+              <img src={accenture} alt="Accenture" />
+              <img src={gupshup} alt="Gupshup" />
+              <img src={increff} alt="Increff" />
+              <img src={sokratiLogo} alt="Sokrati" />
+             
             </div>
 
+           
+
+           
+       
+
+            
          
-            <div className="prinner-row">
+
+
+        
+         
+            <div className="recruiters-row">
               <img src={vassarlabsLogo} alt="Vassar Labs" />
               <img src={walmartglobaltech} alt="Walmart Global Tech" />
               <img src={mthree} alt="Wiley Mthree" />
               <img src={zsassociates} alt="ZS Associates" />
               <img src={zycus} alt="Zycus" />
+              <img src={larsentoubro} alt="Larsen Tourbo" />
+              <img src={maqsoftwareLogo} alt="MAQ Software" />
+              <img src={byjus} alt="Byjus" />
+               
             </div>
           </div>
         </div>
 
      
       
-        <div className="prinner-wrapper">
-          <div className="prinner-box">
-            <div className="prinner-row">
+        <div className="recruiters-wrapper">
+          <div className="recruiters-box">
+            <div className="recruiters-row">
               <img src={directiLogo} alt="Directi" />
-              <img src={amazonLogo} alt="Amazon" />
-              <img src={googleLogo} alt="Google" />
-              <img src={Microsoft} alt="Microsoft" />
               <img src={linkedinLogo} alt="LinkedIn" />
+              <img src={sportsapp} alt="sportsapp" />
+              <img src={nucleusLogo} alt="Nucleus" />
+              <img src={capdgeminiLogo} alt="Capgemini" /> 
+              <img src={tcsLogo} alt="TATA Consultancy Services" />
+              <img src={vehanttechnologiesLogo} alt="Vehant Technologies" />
+              <img src={servicenow} alt="Service Now" />
             </div>
 
-            <div className="prinner-row">
-              <img src={flipkartLogo} alt="Flipkart" />
+            <div className="recruiters-row">
               <img src={vassarlabsLogo} alt="Vassar Labs" />
               <img src={sabreLogo} alt="Sabre" />
               <img src={xebiaLogo} alt="Xebia" />
               <img src={goldmansachsLogo} alt="Goldman Sachs" />
+              <img src={sawolabds} alt="Sawo Labs" />
+              <img src={maqsoftwareLogo} alt="MAQ Software" />
+              <img src={mindtickleLogo} alt="Mind Tickle" />
+              <img src={joshtechnologyLogo} alt="Josh Technology Group" />
+            
             </div>
 
-            <div className="prinner-row">
+            <div className="recruiters-row">
               <img src={infoedgeLogo} alt="Infoedge" />
               <img src={nineleapsLogo} alt="Nineleaps" />
               <img src={nucleusLogo} alt="Nucleus" />
               <img src={nykaaLogo} alt="Nykaa" />
               <img src={samsungLogo} alt="Samsung" />
-            </div>
-
-            <div className="prinner-row">
-              <img src={infotechhubLogo} alt="Infotech Hub" />
-              <img src={juspayLogo} alt="Juspay" />
-              <img src={mavenhiveLogo} alt="MavenHive" />
-              <img src={virtusaLogo} alt="Virtusa" />
-              <img src={goibiboLogo} alt="Go Ibibo" />
-            </div>
-
-            <div className="prinner-row">
-              <img src={bizongoLogo} alt="Bizongo" />
-              <img src={expediaLogo} alt="Expedia" />
-              <img src={infoobjectsLogo} alt="Info Objects" />
-              <img src={accoliteLogo} alt="Accolite" />
-              <img src={zenefitsLogo} alt="Zenefits" />
-            </div>
-
-            <div className="prinner-row">
-              <img src={quantiphiLogo} alt="Quantiphi" />
-              <img src={ackoLogo} alt="Acko" />
               <img src={whitepandaLogo} alt="White Panda" />
               <img src={nagarroLogo} alt="nagarro" />
               <img src={ONEmgLogo} alt="1mg" />
             </div>
 
-            <div className="prinner-row">
-              <img src={ShipsyLogo} alt="shipsy" />
-              <img src={jdaLogo} alt="jda" />
-              <img src={maqsoftwareLogo} alt="MAQ Software" />
-              <img src={mindtickleLogo} alt="Mind Tickle" />
-              <img src={joshtechnologyLogo} alt="Josh Technology Group" />
+            <div className="recruiters-row">
+              <img src={infotechhubLogo} alt="Infotech Hub" />
+              <img src={juspayLogo} alt="Juspay" />
+              <img src={mavenhiveLogo} alt="MavenHive" />
+              <img src={virtusaLogo} alt="Virtusa" />
+              <img src={goibiboLogo} alt="Go Ibibo" />
+              <img src={infoobjectsLogo} alt="Info Objects" />
+              <img src={accoliteLogo} alt="Accolite" />
+              <img src={zenefitsLogo} alt="Zenefits" />
             </div>
 
-            <div className="prinner-row">
+            <div className="recruiters-row">
+              <img src={bizongoLogo} alt="Bizongo" />
+              <img src={expediaLogo} alt="Expedia" />
               <img src={paytmLogo} alt="Paytm" />
               <img src={hashedInLogo} alt="Hashedin" />
               <img src={americanExpressLogo} alt="American Express" />
               <img src={collegeduniaLogo} alt="College Dunia" />
               <img src={valuefyLogo} alt="Valuefy" />
+              <img src={jdaLogo} alt="jda" />
+           
             </div>
 
-            <div className="prinner-row">
-              <img src={travelokaLogo} alt="traveloka" />
-              <img src={codenationLogo} alt="Codenation" />
-              <img src={sokratiLogo} alt="Sokrati" />
-              <img src={tcsLogo} alt="TATA Consultancy Services" />
-              <img src={vehanttechnologiesLogo} alt="Vehant Technologies" />
-            </div>
-
-            <div className="prinner-row">
+            <div className="recruiters-row">
+              <img src={quantiphiLogo} alt="Quantiphi" />
+              <img src={ackoLogo} alt="Acko" />
               <img src={wiproLogo} alt="Wipro" />
               <img src={wickedrideLogo} alt="Wicked Ride" />
               <img src={polestarLogo} alt="Pole Star" />
               <img src={kleanLogo} alt="Klean Homez" />
               <img src={zomatologo} alt="Zomato" />
-            </div>
-
-            <div className="prinner-row">
-              <img src={intelLogo} alt="Intel" />
-              <img src={dotnetLogo} alt="Dotnet" />
-              <img src={nutanixLogo} alt="Nutanix" />
               <img src={buyhatkeLogo} alt="Buy Hatke" />
             </div>
 
-            <div className="prinner-row">
+         
+
+           
+
+            <div className="recruiters-row">
+              <img src={travelokaLogo} alt="traveloka" />
+              <img src={codenationLogo} alt="Codenation" />
               <img src={tekionLogo} alt="Tekion" />
               <img src={gradeupLogo} alt="Gradeup" />
               <img src={ucLogo} alt="Urban Company" />
               <img src={jioLogo} alt="Jio" />
               <img src={pubLogo} alt="Publicis Sapients" />
+              <img src={delhiveryLogo} alt="Delhivery" />
             </div>
 
-            <div className="prinner-row">
+           
+
+            <div className="recruiters-row">
+              <img src={intelLogo} alt="Intel" />
+              <img src={dotnetLogo} alt="Dotnet" />
+              <img src={nutanixLogo} alt="Nutanix" />
               <img src={onineLogo} alt="o9 solutions" />
               <img src={nferenceLogo} alt="Nference" />
               <img src={abbLogo} alt="ABB" />
               <img src={clarivateLogo} alt="Clarivate" />
-              <img src={delhiveryLogo} alt="Delhivery" />
+              <img src={niLogo} alt="National Instruments" />
             </div>
 
-            <div className="prinner-row">
+         
+          
+
+            <div className="recruiters-row">
               <img src={cardekhoLogo} alt="Car Dekho" />
               <img src={gameskraftLogo} alt="Gameskraft" />
               <img src={practoLogo} alt="Practo" />
               <img src={deloitteLogo} alt="Deloitte" />
               <img src={capdgeminiLogo} alt="Capgemini" />
-            </div>
-
-            <div className="prinner-row">
               <img src={gaugelogo} alt="Gauge Data Solutions" />
               <img src={symphonylogo} alt="Symphony" />
               <img src={tripockLogo} alt="Tripock" />
-              <img src={niLogo} alt="National Instruments" />
             </div>
 
 
-            <div className="prinner-row">
+            <div className="recruiters-row">
             <img src={FedralBank} alt="FedralBank" />
             <img src={ICICI} alt="ICICI}" />
             <img src={Bhart} alt="Bhart" />

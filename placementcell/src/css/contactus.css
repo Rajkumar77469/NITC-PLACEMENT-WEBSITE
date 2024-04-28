@@ -5,6 +5,7 @@
     text-align: left;
     flex-wrap: wrap;
     margin-top: 15px;
+  
    
   }
   .contact-box {
@@ -12,6 +13,7 @@
     width: 100%;
     border-radius: 25px;
     padding: 20px;
+ 
   }
   
   .contact-box h1 {
@@ -26,6 +28,7 @@
   .contact-box a {
     text-decoration: none;
     color: black;
+    background-image: linear-gradient(to right, #9679f7, white, #79f7ed93);
   }
   
   .contact-box a:hover {
@@ -136,7 +139,7 @@
   }
   
   .placement-team h1 {
-    background-color: rgba(255, 255, 255, 0.397)55, 255, 255);
+    background-color: rgba(255, 255, 255, 0.397);
     border: none;
   }
   

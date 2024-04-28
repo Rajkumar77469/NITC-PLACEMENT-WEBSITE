@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import logo from "./logonitc-removebg-preview.png"
-import logoImage from "./G20_India_2023_logo.png"
+import ccdblanklogo from"../BootcampImages/ccdlogo-removebg-preview.png";
 const Toolbar = props => (
 
   <header className="toolbar">
@@ -43,7 +43,8 @@ const Toolbar = props => (
         </ul>
       </div>
       <Link to="/"  style={{ textDecoration: "none", color: "white" }}>
-      <div className="logo">  <img src={logoImage} alt="Logo" style={{marginLeft:'200px',height: '60px', width: '100px' }}  />
+      <div className="logo">  <img src={ccdblanklogo} alt="Logo" style={{marginLeft: '10px', height: '105px', width: '105px'}}
+      />
       </div>
     </Link>
     

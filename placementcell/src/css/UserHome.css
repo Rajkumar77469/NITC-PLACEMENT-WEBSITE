@@ -12,6 +12,7 @@
     color:#000066;
     font-family: 'Times New Roman', Times, serif;
     line-height: 2.5;
+    background-image: linear-gradient(to right, #9679f7, white, #79f7ed93);
 
   }
   .placementstatus{
@@ -115,4 +116,7 @@ border: 2px solid white;
 .placementstatus{
   border:5px solid red !important;
   background-color: red;
+}
+.userhomepagecss{
+  background-image: linear-gradient(to right, #9679f7, white, #79f7ed93);
 }

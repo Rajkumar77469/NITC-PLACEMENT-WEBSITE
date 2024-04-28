@@ -14,7 +14,7 @@ const interviewSchema = new mongoose.Schema(
     Enrollment: {
       type: String,
       required: [true, "Enrollment is required"],
-      unique: true, // Making Enrollment field unique
+    
     },
     Email: {
       type: String,
