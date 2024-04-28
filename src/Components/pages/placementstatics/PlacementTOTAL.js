@@ -120,17 +120,17 @@ const Placement2023 = () => {
             <div className="chart-container">
           <PlacementPG/>
           </div>
-            <div className="chart-container">
+            <div className="chart-container-alg">
            <PlacementBtech/>
             </div>
           
           <div className="chart-container">
           <PlacementChemical/>
           </div>
-          <div className="chart-container">
+          <div className="chart-container-alg">
           <PlacementElectrical/>
           </div>
-          <div className="chart-container">
+          <div className="chart-container-algsay">
           <PlacementElectronics/>
           </div>
           <div className="chart-container">
@@ -139,13 +139,13 @@ const Placement2023 = () => {
           <div className="chart-container">
           <PlacementMba/>
           </div>
-          <div className="chart-container">
+          <div className="chart-container-algsay">
           <PlacementMtechCivil/>
           </div>
-          <div className="chart-container">
+          <div className="chart-container-algsay">
           <PlacementMtechElectricalElectronics/>
           </div>
-          <div className="chart-container">
+          <div className="chart-container-algsay">
           <PlacementMtechMechanical/>
           </div>
       </div>

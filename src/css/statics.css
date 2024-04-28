@@ -56,5 +56,18 @@
     max-width: 100%; 
   }
   
+  .chart-container-alg{
+    display: flex;
+    flex:80;
+    justify-content: center;
+    margin-left: 300px;
+    
+  }
 
+  .chart-container-algsay{
+    display: flex;
+    flex:80;
+    justify-content: center;
+    margin-left: 360px;
+  }
    

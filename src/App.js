@@ -13,7 +13,8 @@
                 import "./css/studentcompany.css"
                 import "./css/recruiters.css"
                 import "./css/Mainpage.css"
-                import "./css/statics.css"
+                import "./css/statics.css";
+                import "./css/Bootcamp.css"
             import React from 'react';
             // import Navbar from './Components/Navbar';
             import Home from  "./Components/pages/Home.js";
@@ -28,7 +29,9 @@
             import PastRecruiters from "./Components/company/Recruiters.js"
             import Mainpage from "./Components/Mainpage/Mainpage.js";
             import Placement from "./Components/pages/placementstatics/PlacementTOTAL.js"
-           
+        
+          import UpdateDetails from "./Components/updateuser/updatedetils.js";
+      
             // import "./App.css";
             // <Navbar />
             function App() {
@@ -48,6 +51,7 @@
                       <Route path="/our-recruiters" element={<PastRecruiters/>} />\
                       <Route path="/mainpage" element={<Mainpage/>} />
                       <Route path="/placement-stats" element={<Placement/>} />
+                      <Route path="/user-details-edit" element={<UpdateDetails/>} />
                     </Routes>
                   </Router>
                 </div>

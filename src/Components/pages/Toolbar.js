@@ -16,28 +16,28 @@ const Toolbar = props => (
         <ul>
           <li>
             <NavLink to="/about-us" exact="true" className="activeclass">
-              About NITC
+              ABOUT NITC
             </NavLink>
           </li>
        
           <li>
           <NavLink to="/placement-stats" exact="true" className="activeclass">
-          Statistics
+          STATISTICS
           </NavLink>
         </li>
           <li>
             <NavLink to="/our-recruiters" exact className="activeclass">
-              Our Recruiters
+              OUR RECRUITERS
             </NavLink>
           </li>
           <li>
             <NavLink to="/contact-us" exact="true" className="activeclass">
-              Contact Us
+              CONTACT US
             </NavLink>
           </li>
           <li>
           <NavLink to="/register" exact="true" className="activeclass">
-            Register
+            REGISTER
           </NavLink>
         </li>
         </ul>
