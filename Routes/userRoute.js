@@ -1,11 +1,13 @@
 const express = require("express");
+const multer = require('multer')
 const {
   loginController,
   registerController,
 } = require("../Controler/userController");
 const {getStudentDetailsByEmail,getAllinterviewByEmail}=require("../Controler/userStudentController");
 const {applycontroler,saveexcel}=require("../Controler/applycontroller");
-
+const { updateUserDetails } = require('../Controler/updateusercontroller');
+const {uploadResume,deleteResume,getUserResume}=require("../Controler/resumecontroller")
 //router object=
 const router = express.Router();
 
@@ -26,8 +28,29 @@ router.post("/register", registerController);
  router.get("/student-interview-details/:Email", getAllinterviewByEmail);
  router.post("/appliedcompany",applycontroler);
  router.post("/save-to-excel",saveexcel);
+ router.put("/update", updateUserDetails);
 
-//  router.post('/add-to-excel/:companyName', addToExcelController);
-// router.post('/create-excel-sheet', createExcelSheetController);
-// router.get('/excel-sheet/:companyName', getExcelSheet);
+ const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'uploads/'); // Directory where files will be stored
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.originalname); // Use original file name
+  }
+});
+
+const upload = multer({ storage });
+
+// Routes
+router.post('/upload-resume', upload.single('file'), uploadResume);
+router.delete('/delete-resume/:userId', deleteResume);
+router.get('/get-user-resume/:userId', getUserResume)
+
 module.exports = router;
+
+// userRoutes.js
+
+
+
+
+
