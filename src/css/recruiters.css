@@ -1,106 +1,105 @@
 
 .pr-container {
-    display: flex;
-    justify-content: center;
-  }
-  .prouter-container{
-    background-image: linear-gradient(to right, #9679f7, #86fbf5, #9679f7);
-  }
-  .pr-wrapper {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  
+  display: flex;
+  justify-content: center;
+}
+.mainrecruiters-container{
+  background-image: linear-gradient(to right, #9679f7, white, #79f7ed93);
+}
+.pr-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pr-box {
+  box-sizing: border-box;
+  margin: 15px 20px;
+  padding: 0;
+  float: left;
+  top: 0px;
+  position: relative;
+  background: #fdfdfd;
+  transition: all 0.3s ease-out 0s;
+  z-index: 1;
+  border-bottom: 2px solid rgba(2, 216, 113, 0.2);
+  text-align: center;
+  padding: 15px;
+  width: 250px;
+}
+
+.pr-company-logo {
+  width: 60%;
+}
+
+.pr-company h5 {
+  z-index: 99;
+  position: relative;
+}
+
+.pr-box-content {
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 30px;
+  font-style: normal;
+}
+
+.pr-box:hover,
+.pr-box.active {
+  top: -4px;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid rgba(250, 123, 128, 1);
+}
+
+.mainrecruiters-container {
+  text-align: center;
+}
+
+.pr-sub-heading {
+  display: flex;
+  justify-content: center;
+  text-decoration: underline;
+  margin: 20px;
+}
+
+.pr-sub-heading h2 {
+  font-size: 35px;
+  width: fit-content;
+}
+
+@media (max-width: 366px) {
   .pr-box {
-    box-sizing: border-box;
-    margin: 15px 20px;
-    padding: 0;
-    float: left;
-    top: 0px;
-    position: relative;
-    background: #fdfdfd;
-    transition: all 0.3s ease-out 0s;
-    z-index: 1;
-    border-bottom: 2px solid rgba(2, 216, 113, 0.2);
-    text-align: center;
-    padding: 15px;
-    width: 250px;
+    width: 200px;
   }
-  
-  .pr-company-logo {
-    width: 60%;
-  }
-  
-  .pr-company h5 {
-    z-index: 99;
-    position: relative;
-  }
-  
   .pr-box-content {
-    margin-top: 20px;
-    font-weight: 600;
-    font-size: 30px;
-    font-style: normal;
+    font-size: 15px;
   }
-  
-  .pr-box:hover,
-  .pr-box.active {
-    top: -4px;
-    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
-    border-bottom: 2px solid rgba(250, 123, 128, 1);
+}
+
+@media (max-width: 240px) {
+  .pr-box {
+    width: 160px;
   }
-  
-  .prouter-container {
-    text-align: center;
-  }
-  
-  .pr-sub-heading {
-    display: flex;
-    justify-content: center;
-    text-decoration: underline;
-    margin: 20px;
-  }
-  
-  .pr-sub-heading h2 {
-    font-size: 35px;
-    width: fit-content;
-  }
-  
-  @media (max-width: 366px) {
-    .pr-box {
-      width: 200px;
-    }
-    .pr-box-content {
-      font-size: 15px;
-    }
-  }
-  
-  @media (max-width: 240px) {
-    .pr-box {
-      width: 160px;
-    }
-  }
-  
-  .prinner-wrapper {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .prinner-box {
-    width: 95%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    margin: 20px 0;
-    margin-bottom: 30px;
-    flex-direction: column;
-  }
-  
-  .prinner-box img {
-    width: 150px;
-    margin: 25px 10px;
-  }
-  
+}
+
+.recruiters-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.recruiters-box {
+  width: 95%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin: 20px 0;
+  margin-bottom: 30px;
+  flex-direction: column;
+}
+
+.recruiters-box img {
+  width: 150px;
+  margin: 25px 10px;
+}

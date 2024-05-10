@@ -1,89 +1,3 @@
-/*
-.student-details {
-    background-color: #f9f9f9; 
-    border: 1px solid #ddd; 
-    border-radius: 8px; 
-    padding: 20px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
-    transition: transform 0.3s ease; 
-  }
-  
-  .student-details:hover {
-    transform: translateY(-3px); 
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1); 
-  }
-  
-  .status-heading {
-    font-size: 1.5rem; 
-    color: #333; 
-    text-transform: uppercase; 
-    margin-bottom: 10px;
-  }
-  
-  .status {
-    font-size: 2rem; 
-    color: #2ecc71; 
-    font-weight: bold; 
-  }
-  
-  .details {
-    margin-top: 20px;
-  }
-  
-  .detail {
-    margin: 10px 0; 
-    font-size: 1.2rem; 
-    color: #555; 
-  }
-  
-  .label {
-    font-weight: bold; 
-    color: #444; 
-  }
-  
-  
-  .companies {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  .company {
-    background-color: #f7f7f7; 
-    border: 1px solid #ddd; 
-    border-radius: 8px; 
-    padding: 20px;
-    width: calc(33.33% - 20px); 
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
-  }
-  
-  .company h1 {
-    color: #333; 
-    margin-bottom: 10px;
-    font-size: 1.5rem; 
-    font-weight: bold; 
-    text-transform: uppercase; 
-  }
-  
-  .company .detail {
-    margin: 8px 0;
-    font-size: 1.2rem; 
-    color: #666; 
-  }
-  
-  .label {
-    font-weight: bold; 
-    color: #444; 
-  }
-  
-  .company:hover {
-    transform: translateY(-3px); 
-    transition: transform 0.3s ease; 
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1); 
-  }
-*/
-
-/* UserHome.css */
 
 .user-home {
     font-family: Arial, sans-serif;
@@ -96,6 +10,15 @@
     align-items: flex-start;
   }
   
+  /* .student-details {
+    width: 40%; 
+    background-color: #f7f7f7; 
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    padding: 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
+  } */
+  
   .student-details {
     width: 40%; /* Adjust width as needed */
     background-color: #f7f7f7; /* Light gray background */
@@ -103,8 +26,15 @@
     border-radius: 8px; /* Rounded corners */
     padding: 20px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
-  }
-  
+    transition: box-shadow 0.3s ease; /* Smooth transition for box shadow */
+}
+
+.student-details:hover {
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Larger box shadow on hover */
+    transform: translateY(-2px);
+    /* Move the card slightly up on hover */
+}
+
   .companies {
     width: 55%; /* Adjust width as needed */
     display: flex;

@@ -3,7 +3,8 @@ import Adminhome from './../Admin/Adminhome';
 import Companyhome from './../company/Companyhome';
 import Interviewhome from './../interview/interviewhome';
 import { useState } from 'react';
-import registersidepic from '../../Components/pages/registersidepic.jpg'
+import registersidepic from '../../Components/pages/registersidepic.jpg';
+import Mainpic from './mainplacment.png';
 const Mainpage = () => {
   const [activeComponent, setActiveComponent] = useState(null);
 
@@ -18,7 +19,7 @@ const Mainpage = () => {
       <Layout>
       <h4 className="heading">WELCOME TO NITC PLACEMENT WEBSITE (Centre for Career Development)</h4>
         <div className="main-container">
-          <img className="main-side-image" src={registersidepic} alt="" />
+          <img className="main-side-image" src={Mainpic} alt="" />
           <div className='adminpagebutton'>
             <button onClick={() => renderComponent('Adminhome')}>Student</button>
             <button onClick={() => renderComponent('Companyhome')}>Companyhome</button>
