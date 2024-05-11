@@ -123,14 +123,7 @@ border: 2px solid white;
 
 
 /** css for resume uploading */
-.alertuser{
-  border:5px solid read;
-  color: red;
-  font-weight: bold;
-  font-family: 'Times New Roman', Times, serif;
-  font-size: large;
-  margin-bottom: 80px;
-}
+
 
 .App {
   text-align: center;

@@ -1,4 +1,5 @@
 
+
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserOutlined, EditOutlined } from "@ant-design/icons";
@@ -115,7 +116,9 @@ const Header = () => {
                   Logout
                 </button>
               </li>
-            
+              <li className="nav-item">
+                <EditOutlined style={{ fontSize: '24px', color: '#fff', marginLeft: '20px', cursor: 'pointer' }} onClick={handleEdit} />
+              </li>
             </ul>
           </div>
         </div>

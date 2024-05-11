@@ -74,9 +74,9 @@ const Adminhome = () => {
       key: "tenth",
     },
     {
-      title: "intermediate",
-      dataIndex: "intermediate",
-      key: "intermediate",
+      title: "TWELTH",
+      dataIndex: "Twelth",
+      key: "twelth",
     },
     {
       title: "GRADUATION",
@@ -186,7 +186,7 @@ const Adminhome = () => {
     "BRANCH":item.Branch,
     "ADDRESS":item.Address,
     "TENTH":item.Tenth,
-    "intermediate":item.intermediate,
+    "TWELTH":item.Twelth,
     "GRADUATION":item.Graduation,
     "CGPA":item.Cgpa,
     "DATE OF BIRTH": moment(item.Dob).format("DD-MM-YYYY"),
@@ -429,7 +429,7 @@ const Adminhome = () => {
           <Form.Item label="TENTH" name="Tenth" rules={[{ required: true, message: 'Please fill student Tenth percentage' }]}>
             <Input type="Number" required />
           </Form.Item>
-          <Form.Item label="intermediate" name="intermediate" rules={[{ required: true, message: 'Please fill student intermediate percentage' }]}>
+          <Form.Item label="TWELTH" name="Twelth" rules={[{ required: true, message: 'Please fill student Twelth percentage' }]}>
             <Input type="Number" required />
           </Form.Item>
           <Form.Item label="GRADUATION" name="Graduation">

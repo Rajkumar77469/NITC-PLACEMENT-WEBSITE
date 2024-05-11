@@ -3,6 +3,7 @@ import Adminhome from './../Admin/Adminhome';
 import Companyhome from './../company/Companyhome';
 import Interviewhome from './../interview/interviewhome';
 import { useState } from 'react';
+import registersidepic from '../../Components/pages/registersidepic.jpg';
 import Mainpic from './mainplacment.png';
 const Mainpage = () => {
   const [activeComponent, setActiveComponent] = useState(null);
