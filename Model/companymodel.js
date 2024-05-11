@@ -25,7 +25,7 @@ const companySchema = new mongoose.Schema(
     Tenth:{
       type:Number,
     },
-    Twelth:{
+    intermediate:{
       type:Number,
     },
     Graduation:{

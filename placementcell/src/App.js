@@ -1,19 +1,18 @@
 
 
-               import "./css/about.css";
-                import "./css/backdrop.css";
-                import "./css/contactus.css";
-                import "./css/footer.css";
-                import "./css/homepage.css";
-                import "./css/sidedrawer.css"
-                import "./css/togglebutton.css";
-                import "./css/toolbar.css";
-                import "./css/UserHome.css"
-                import "./css/studentcompany.css"
-                import "./css/recruiters.css"
-                import "./css/Mainpage.css"
-                import "./css/statics.css";
-        
+          import "./css/about.css";
+          import "./css/backdrop.css";
+          import "./css/contactus.css";
+          import "./css/footer.css";
+          import "./css/homepage.css";
+          import "./css/sidedrawer.css"
+          import "./css/togglebutton.css";
+          import "./css/toolbar.css";
+          import "./css/UserHome.css"
+          import "./css/studentcompany.css"
+          import "./css/recruiters.css"
+          import "./css/Mainpage.css"
+          import "./css/statics.css";
           import ResumeManagementExample from './Components/Resume/ResumeUpload';    
           import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
           import Home from './Components/pages/Home';

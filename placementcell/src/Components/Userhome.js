@@ -8,6 +8,7 @@ import { FaTrash } from 'react-icons/fa';
 const UserHome = () => {
   const [studentDetails, setStudentDetails] = useState(null);
   const [studentinterviewDetails, setStudentinterviewDetails] = useState(null);
+  // const studentinterviewDetails=null;
   const [eligibleCompanies, setEligibleCompanies] = useState([]);
   const [appliedCompanies, setAppliedCompanies] = useState([]);
   const [userId, setUserId] = useState(null);
@@ -21,7 +22,7 @@ const UserHome = () => {
       const filteredCompanies = companys.filter(company => {
         return (
           company.Tenth <= studentDetails.Tenth &&
-          company.Twelth <= studentDetails.Twelth &&
+          company.intermediate <= studentDetails.intermediate &&
           company.Graduation <= studentDetails.Graduation &&
           company.Cgpa <= studentDetails.Cgpa 
         );
@@ -180,8 +181,9 @@ const handleDownloadClick = () => {
                 <p><span className="label">Branch:</span> {studentDetails.Branch}</p>
                 <p><span className="label">Address:</span> {studentDetails.Address}</p>
                 <p><span className="label">Tenth:</span> {studentDetails.Tenth}</p>
-                <p><span className="label">Twelfth:</span> {studentDetails.Twelth}</p>
+                <p><span className="label">intermediate:</span> {studentDetails.intermediate}</p>
                 <p><span className="label">Cgpa:</span> {studentDetails.Cgpa}</p>
+                <p className="alertuser"> NOTE: "if This is not your detials or any mismatch your detials please contact Admin"</p>
               </div>
             </>
           ) : (

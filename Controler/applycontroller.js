@@ -35,37 +35,6 @@ const applycontroler = async (req, res) => {
 };
 
 
-// Save to Excel endpoint
-// const saveexcel = async (req, res) => {
-//   const { companyName, ...studentDetails } = req.body;
-
-//   try {
-//     // Load existing workbook if exists, otherwise create a new one
-//     let workbook = new ExcelJS.Workbook();
-//     if (fs.existsSync(`${companyName}.xlsx`)) {
-//       workbook = await new ExcelJS.Workbook().xlsx.readFile(`${companyName}.xlsx`);
-//     }
-
-//     // Get or create worksheet
-//     let sheet = workbook.getWorksheet(companyName);
-//     if (!sheet) {
-//       sheet = workbook.addWorksheet(companyName);
-//       sheet.addRow(['Name', 'Enrollment', 'Email', 'Gender', 'Mob', 'Branch', 'Address', 'Tenth', 'Twelfth', 'Cgpa']); // Adding headers
-//     }
-
-//     // Add student details
-//     const values = Object.values(studentDetails);
-//     sheet.addRow(values);
-
-//     // Save workbook to file
-//     await workbook.xlsx.writeFile(`${companyName}.xlsx`);
-
-//     res.status(200).json({ message: 'Student details saved to Excel sheet' });
-//   } catch (error) {
-//     console.error('Error saving to Excel:', error);
-//     res.status(500).json({ message: 'Internal server error' });
-//   }
-// };
 
 
 
@@ -86,7 +55,7 @@ const saveexcel = async (req, res) => {
     if (!sheet) {
       sheet = workbook.addWorksheet(companyName);
       // Adding headers if the worksheet is newly created
-      const headers = ['Name', 'Enrollment', 'Email', 'Gender', 'Mob', 'Branch', 'Address', 'Tenth', 'Twelfth', 'Cgpa'];
+      const headers = ['Name', 'Enrollment', 'Email', 'Gender', 'Mob', 'Branch', 'Address', 'Tenth', 'intermediate', 'Cgpa'];
       sheet.addRow(headers);
     }
 

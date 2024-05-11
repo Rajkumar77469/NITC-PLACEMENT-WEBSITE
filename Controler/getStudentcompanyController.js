@@ -13,7 +13,7 @@ exports.getStudentcompany = async (req, res) => {
       Description: company.Description,
       Date: company.date,
       Tenth: company.Tenth,
-      Twelth: company.Twelth,
+      intermediate: company.intermediate,
       Graduation: company.Graduation,
       Cgpa: company.Cgpa,
       // Add more fields here as needed
