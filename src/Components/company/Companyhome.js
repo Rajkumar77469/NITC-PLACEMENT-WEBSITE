@@ -427,7 +427,7 @@ const Companyhome = () => {
       {loading}
         <div className="filters" style={{ display: 'flex', justifyContent: 'space-between' }}>
           <div>
-            <h6>Select Frequency</h6>
+            <h6>Filter By Date</h6>
             <Select value={frequency} onChange={(values) => setFrequency(values)}>
               <Select.Option value="7">LAST 1 Week</Select.Option>
               <Select.Option value="30">LAST 1 Month</Select.Option>

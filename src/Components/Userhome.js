@@ -2,15 +2,17 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Layout from './Layout/Layout';
+import { FaTrash } from 'react-icons/fa';
+//import ResumeManagementExample from './Resume/ResumeUpload';
 
 const UserHome = () => {
   const [studentDetails, setStudentDetails] = useState(null);
   const [studentinterviewDetails, setStudentinterviewDetails] = useState(null);
   const [eligibleCompanies, setEligibleCompanies] = useState([]);
-  const [appliedCompanies, setAppliedCompanies] = useState(() => {
-    const storedAppliedCompanies = localStorage.getItem('appliedCompanies');
-    return storedAppliedCompanies ? JSON.parse(storedAppliedCompanies) : [];
-  });
+  const [appliedCompanies, setAppliedCompanies] = useState([]);
+  const [userId, setUserId] = useState(null);
+  const [resume, setResume] = useState(null); 
+
 
   const fetchData = async () => {
     try {
@@ -24,7 +26,6 @@ const UserHome = () => {
           company.Cgpa <= studentDetails.Cgpa 
         );
       });
-     // &&  studentDetails.Status.equals("Placed")
       setEligibleCompanies(filteredCompanies);
     } catch (error) {
       console.error('Error fetching company details:', error);
@@ -37,6 +38,11 @@ const UserHome = () => {
         const user = JSON.parse(localStorage.getItem('user'));
         const response = await axios.get(`/users/student-details/${user.Email}`);
         setStudentDetails(response.data.student);
+        setUserId(response.data.student._id); // Store the user's ID
+
+        // Fetch the applied companies for the current user
+        const storedAppliedCompanies = localStorage.getItem(`appliedCompanies_${response.data.student._id}`);
+        setAppliedCompanies(storedAppliedCompanies ? JSON.parse(storedAppliedCompanies) : []);
       } catch (error) {
         console.error('Error fetching student details:', error);
       }
@@ -51,35 +57,11 @@ const UserHome = () => {
     }
   }, [studentDetails]);
 
-/** fetching student detils to show interview  */
-
-useEffect(() => {
-  const fetchStudentinterviewDetails = async () => {
-    try {
-      const user = JSON.parse(localStorage.getItem('user'));
-      const response = await axios.get(`/users/student-interview-details/${user.Email}`);
-      setStudentinterviewDetails(response.data.Interviews);
-    } catch (error) {
-      console.error('Error fetching student details:', error);
-    }
-  };
-
-  fetchStudentinterviewDetails();
-}, []);
-
-useEffect(() => {
-  if (studentinterviewDetails) {
-    fetchData();
-  }
-}, [studentinterviewDetails]);
-
-
-
-/** for applied companys */
-
   useEffect(() => {
-    localStorage.setItem('appliedCompanies', JSON.stringify(appliedCompanies));
-  }, [appliedCompanies]);
+    if (userId) {
+      localStorage.setItem(`appliedCompanies_${userId}`, JSON.stringify(appliedCompanies));
+    }
+  }, [appliedCompanies, userId]);
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -87,6 +69,11 @@ useEffect(() => {
   };
 
   const applyToCompany = async (companyName) => {
+    if (!resume) {
+      alert("Please upload a resume first, then apply.");
+      return;
+    }
+  
     try {
       // Disable the button immediately upon clicking
       setAppliedCompanies(prevAppliedCompanies => [...prevAppliedCompanies, companyName]);
@@ -95,18 +82,74 @@ useEffect(() => {
       await axios.post('/users/appliedcompany', { companyName });
       const dataToSave = { companyName, ...studentDetails };
       await axios.post('/users/save-to-excel', dataToSave);
-
+  
       // After completion, update the state
       fetchData();
     } catch (error) {
       console.error('Error applying to company:', error);
     }
   };
+  
+
+
+
+/////resume 
+useEffect(() => {
+  // Fetch the resume from local storage when the component mounts
+  const storedResume = localStorage.getItem(`userResume_${userId}`);
+  if (storedResume) {
+    setResume(storedResume);
+  }
+}, [userId]); // Re-fetch the resume if the user ID changes
+
+const handleResumeUpload = (event) => {
+  if (resume) {
+    alert("You are allowed to upload only one resume.");
+    return;
+  }
+  const file = event.target.files[0]; // Get the uploaded file
+  setResume(file.name); // Store the file name in state
+  localStorage.setItem(`userResume_${userId}`, file.name); // Store the file name in localStorage
+};
+
+const handleDeleteResume = () => {
+  localStorage.removeItem(`userResume_${userId}`); // Remove the resume from local storage
+  setResume(null); // Clear the resume from state
+};
+
+const handleDownloadClick = () => {
+  // Retrieve the resume from local storage
+  const storedResume = localStorage.getItem(`userResume_${userId}`);
+  if (storedResume) {
+    // Create a temporary anchor element to initiate the download
+    const downloadLink = document.createElement("a");
+    downloadLink.href = storedResume;
+    downloadLink.download = storedResume.split("/").pop(); // Extract file name
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+  }
+};
+
 
   return (
     <div className="userhomepagecss">
       <Layout />
+
       <h2 className="heading">WELCOME TO NITC PLACEMENT WEBSITE (Centre for Career Development)</h2>
+      <div>
+      {!resume ? (
+        <input type="file" onChange={handleResumeUpload} accept=".pdf" />
+      ) : (
+        <div className="resume-section">
+          <p>Uploaded Resume: {resume}</p>
+          <div className="button-container">
+            <button className="download-button" onClick={handleDownloadClick}> Download Resume</button>
+            <FaTrash className="delete-icon" onClick={handleDeleteResume} />
+          </div>
+        </div>
+      )}
+    </div>
       <div className="interviewnotify">
       {studentinterviewDetails && (
         <div>
@@ -156,13 +199,14 @@ useEffect(() => {
               <p><span className="label">CTC:</span> {company.CTC}</p>
               <p><span className="label">Description:</span> {company.Description}</p>
               <p><span className="label">Date:</span> {formatDate(company.Date)}</p>
-              {/* Disable the button if the company is already applied */}
+            
               <button
-                onClick={() => applyToCompany(company.CompanyName)}
-                disabled={appliedCompanies.includes(company.CompanyName)}
-              >
-                {appliedCompanies.includes(company.CompanyName) ? 'Applied' : 'Apply'}
-              </button>
+              key={company.CompanyName}
+              onClick={() => applyToCompany(company.CompanyName)}
+              disabled={appliedCompanies.includes(company.CompanyName)}
+            >
+              {appliedCompanies.includes(company.CompanyName) ? 'Applied' : 'Apply'}
+            </button>
             </div>
           ))}
         </div>

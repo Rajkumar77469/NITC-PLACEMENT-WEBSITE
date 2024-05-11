@@ -6,37 +6,11 @@ import Spinner from "./Spinner";
 import Navbar from "./Navbar";
 import "../css/Loginpage.css";
 import regsitersidepic from "./registersidepic.jpg";
+
 const Login = () => {
  
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  //from submit
-  // const submitHandler = async (values) => {
-  //   try {
-  //     setLoading(true);
-  //     const { data } = await axios.post("/users/login", values);
-  //     setLoading(false);
-  //     message.success("login success");
-  //     localStorage.setItem(
-  //       "user",
-  //       JSON.stringify({ ...data.user, password: "" })
-  //     );
-  //     // navigate("/userhome");
-      
-  //     const user = JSON.parse(localStorage.getItem("user"));
-
-  //     // Check if user isAdmin
-  //     if (user && user.isAdmin === true) {
-  //       navigate("/mainpage");
-  //     } else {
-  //       navigate("/userhome");
-  //     }
-  //     // navigate("/contact-us");
-  //   } catch (error) {
-  //     setLoading(false);
-  //     message.error("something went wrong");
-  //   }
-  // };
   const submitHandler = async (values) => {
     try {
       setLoading(true);
@@ -93,6 +67,7 @@ const Login = () => {
                 <Link to="/register">
                   Not a user ? Click Here to regsiter !
                 </Link>
+                <Link to="/forgot-password">Forgot Password</Link>
                 <button className="btn ">Login</button>
               </div>
             </Form>
