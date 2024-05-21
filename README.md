@@ -2,6 +2,8 @@
 intall node_modeules both frontend and backend  using npm install
 to run server -> npm start
 to run client-> cd placementcell -> npm start
+for complete code download zip file  ->NITC_PLACEMENT_WEBSITE temp12.zip
+
 ![home page ](https://github.com/Rajkumar77469/NITC-PLACEMENT-WEBSITE/assets/139280118/4291767d-9814-47ce-a137-90abf905319c)
 ![Register](https://github.com/Rajkumar77469/NITC-PLACEMENT-WEBSITE/assets/139280118/d615584e-4cf5-4632-b402-ede50fb4fa74)
 
